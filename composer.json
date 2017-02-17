@@ -14,6 +14,7 @@
         "magento/framework": "100.0.*",
         "snowdog/theme-blank-sass": "0.10.0",
         "snowdog/frontools": "dev-feature/sass-include-paths",
+        "zurb/foundation": "^6.3",
         "php": "~5.6.0|~7.0.0"
     },
     "autoload": {
