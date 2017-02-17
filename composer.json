@@ -4,19 +4,19 @@
     "version": "0.0.1",
     "license": "MIT",
     "type": "magento2-theme",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/augustash/magento2-frontools"
-        }
-    ],
     "require": {
-        "magento/framework": "100.0.*",
+        "magento/framework": "100.1.*",
         "snowdog/theme-blank-sass": "0.10.0",
         "snowdog/frontools": "dev-feature/sass-include-paths",
         "zurb/foundation": "^6.3",
         "php": "~5.6.0|~7.0.0"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.augustash.com/repo/private/"
+        }
+    ],
     "autoload": {
         "files": [
             "registration.php"
