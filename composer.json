@@ -3,7 +3,7 @@
     "description": "Magento base theme for August Ash projects based on Snowdog-blank-sass",
     "version": "0.0.1",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "alpha",
     "type": "magento2-theme",
     "repositories": [
         {
