@@ -177,7 +177,7 @@
 //////////////////////
 // fontawesome icon
 //////////////////////
-@mixin icon($position: before, $icon: false, $icon-set: fa, $styles: true) {
+@mixin icon($position: before, $icon: false, $icon-set: fontawesome, $styles: true) {
   @if $position == both {
     $position: 'before, &:after';
   }

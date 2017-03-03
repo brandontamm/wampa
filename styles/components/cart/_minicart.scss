@@ -36,7 +36,7 @@
 
     outline: none;
 
-    @include icon($position: before, $icon-set: 'fa', $icon: shopping-basket) {
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: shopping-basket) {
       display: inline-block;
       font-size: $global-font-size * 2;
       line-height: 1;
@@ -62,7 +62,7 @@
     float: right;
     outline: none;
 
-    @include icon($position: before, $icon-set: 'fa', $icon: close) {
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: close) {
       vertical-align: top;
       position: absolute;
       top: 0;

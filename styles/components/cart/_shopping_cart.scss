@@ -4,7 +4,7 @@
 
   [aria-selected="false"] {
 
-    @include icon($position: before, $icon-set: 'fa', $icon: menu) {
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: menu) {
       margin: $global-margin;
       vertical-align: top;
     };
@@ -12,7 +12,7 @@
 
   [aria-selected="true"] {
 
-    @include icon($position: before, $icon-set: 'fa', $icon: close) {
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: close) {
       margin: $global-margin;
       vertical-align: top;
     };

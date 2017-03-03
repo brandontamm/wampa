@@ -28,7 +28,7 @@
   .action.edit,
   .action-edit {
 
-    @include icon($position: before, $icon-set: 'fa', $icon: edit) {
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: edit) {
       display: inline-block;
     };
   }
@@ -37,7 +37,7 @@
   .action.delete,
   .action-delete {
 
-    @include icon($position: before, $icon-set: 'fa', $icon: delete) {
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: delete) {
       display: inline-block;
     };
   }
@@ -46,7 +46,7 @@
 //Add printer icon for "Print This Page" link
 .action.print {
 
-  @include icon($position: before, $icon-set: 'fa', $icon: print) {
+  @include icon($position: before, $icon-set: 'fontawesome', $icon: print) {
     display: inline-block;
   };
 }
