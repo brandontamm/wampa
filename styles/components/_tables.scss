@@ -19,37 +19,47 @@ table {
   }
 }
 
-.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) > tbody > tr td::before,
-.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) > tbody > tr th::before {
+//Account Order table for small screens.
+.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) {
 
-  @include breakpoint(small only) {
-    padding-right: 10px;
-    content: attr(data-th) ': ';
-    display: inline-block;
-    color: #111;
-    font-weight: 700;
+  > tbody {
+
+    > tr {
+
+      td,
+      th {
+        @include breakpoint(small only) {
+          display: block;
+          padding: ($global-padding / 2) ($global-padding);
+        }
+
+        &::before {
+          @include breakpoint(small only) {
+            padding-right: $global-padding / 4;
+            content: attr(data-th) ': ';
+            display: inline-block;
+            font-weight: bold;
+          }
+        }
+      }
+
+      > td.col.qty {
+        @include breakpoint(small only) {
+          text-align: left;
+        }
+      }
+    }
   }
-}
 
-.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) > tbody > tr td,
-.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) > tbody > tr th {
+  > thead {
 
-  @include breakpoint(small only) {
-    display: block;
-    padding: ($global-padding / 2) ($global-padding);
-  }
-}
+    > tr {
 
-.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) > thead > tr > th {
-
-  @include breakpoint(small only) {
-    display: none;
-  }
-}
-
-.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr > td.col.qty {
-
-  @include breakpoint(small only) {
-    text-align: left;
+      > th {
+        @include breakpoint(small only) {
+          display: none;
+        }
+      }
+    }
   }
 }
