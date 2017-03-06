@@ -1,0 +1,55 @@
+//Table styles - used in Magento 2
+table {
+
+  border: 1px solid $grey-light;
+  text-align: left;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+
+  caption {
+
+    text-align: left;
+    padding-left: 0;
+  }
+
+  td {
+
+    vertical-align: top;
+  }
+}
+
+.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) > tbody > tr td::before,
+.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) > tbody > tr th::before {
+
+  @include breakpoint(small only) {
+    padding-right: 10px;
+    content: attr(data-th) ': ';
+    display: inline-block;
+    color: #111;
+    font-weight: 700;
+  }
+}
+
+.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) > tbody > tr td,
+.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) > tbody > tr th {
+
+  @include breakpoint(small only) {
+    display: block;
+    padding: ($global-padding / 2) ($global-padding);
+  }
+}
+
+.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) > thead > tr > th {
+
+  @include breakpoint(small only) {
+    display: none;
+  }
+}
+
+.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr > td.col.qty {
+
+  @include breakpoint(small only) {
+    text-align: left;
+  }
+}
