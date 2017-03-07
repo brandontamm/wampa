@@ -10,11 +10,10 @@
 // We load our variables and custom foundation (found in utils/) before we
 // load in the Foundation componenets so we can override them.
 
-@import 'foundation';
+@import '../../../vendor/zurb/foundation/scss/foundation';
 @import 'utils/breakpoints';
 @import 'utils/variables';
 @import 'base/foundation_components';
-// @include foundation-everything;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Utilities
