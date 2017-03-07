@@ -1,12 +1,12 @@
 {
     "name": "augustash/theme-frontend-wampa",
     "description": "Magento base theme for August Ash projects based on Snowdog-blank-sass",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "license": "MIT",
     "type": "magento2-theme",
     "require": {
         "magento/framework": "100.1.*",
-        "snowdog/theme-blank-sass": "0.10.0",
+        "snowdog/theme-blank-sass": "~0.10.0",
         "snowdog/frontools": "dev-feature/add-ignore-sass-files",
         "zurb/foundation": "^6.3",
         "php": "~5.6.0|~7.0.0"
