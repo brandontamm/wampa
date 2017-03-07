@@ -43,3 +43,24 @@
     }
   }
 }
+
+.block-order-details-view {
+
+  .block-content {
+
+    > div {
+
+      @include breakpoint(medium) {
+        @include grid-column;
+      }
+
+      @include breakpoint(large) {
+        @include grid-column(3);
+      }
+    }
+  }
+
+  &:after {
+    clear: both;
+  }
+}
