@@ -3,3 +3,8 @@
 humans.txt
 robots.txt
 node_modules
+
+###############
+# Generated CSS
+###############
+web/css/*.css*
