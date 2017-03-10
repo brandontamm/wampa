@@ -891,6 +891,7 @@
 
   .fotorama__nav__frame {
     padding-left: 0 !important;
+    display: inline-block;
 
     &:last-child {
       padding-right: 0 !important;
