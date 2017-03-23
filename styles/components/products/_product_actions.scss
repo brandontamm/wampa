@@ -50,3 +50,29 @@
     display: inline-block;
   };
 }
+
+// Add heart icon for add to wishlist
+.action.towishlist {
+
+  @include icon($position: before, $icon-set: 'fontawesome', $icon: heart) {
+    display: inline-block;
+  };
+
+  > span {
+    font-size: 0;
+    visibility: hidden;
+  }
+}
+
+// Add compare icon for add to compare
+.action.tocompare {
+
+  @include icon($position: before, $icon-set: 'fontawesome', $icon: compare) {
+    display: inline-block;
+  };
+
+  > span {
+    font-size: 0;
+    visibility: hidden;
+  }
+}
