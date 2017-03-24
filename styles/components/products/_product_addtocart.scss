@@ -2,31 +2,30 @@
 
   .control {
 
-    input {
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button {  
+
+      opacity: 0;
+    }
+
+    button {
+      float: left;
+      margin-top: 0;
+      border-radius: 0;
       position: relative;
-      padding: 0;
-      padding-left: $global-padding / 2;
+      z-index: 10;
     }
 
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-
-      -webkit-appearance: none;
-      background: $white url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=) no-repeat center center;
-      width: $global-padding;
-      border-left: 1px solid $grey-light;
-      opacity: 0.5;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      padding-left: 0;
+    input {
+      float: left;
+      width: 50%;
+      height: $global-padding * 2.2;
+      border-radius: 0;
+      text-align: center;
     }
+  }
 
-    input[type="number"]::-webkit-inner-spin-button:hover,
-    input[type="number"]::-webkit-inner-spin-button:active {
-      box-shadow: 0 0 2px $blue;
-      opacity: 1;
-    }
+  .actions {
+    clear: both;
   }
 }
