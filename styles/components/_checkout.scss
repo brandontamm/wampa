@@ -1,5 +1,6 @@
 //Checkout Process Page
-.page-layout-checkout {
+.page-layout-checkout,
+.checkout-index-index {
 
   .step-title {
 
@@ -24,6 +25,139 @@
 
         background-color: $grey-light;
         border-radius: $global-radius;
+      }
+    }
+  }
+
+  .opc-wrapper {
+
+    .checkout-shipping-address,
+    .billing-address-form {
+
+      .choice {
+        margin-bottom: $global-margin;
+      }
+
+      .fieldset.address {
+        @include grid-row;
+
+        fieldset {
+          clear: left;
+
+          .label {
+            background-color: transparent;
+          }
+        }
+
+        > div {
+          @include grid-column(12);
+
+          @include breakpoint(medium) {
+            @include grid-column(4);
+            padding-left: 0 !important;
+
+            &:last-child {
+              float: left !important;
+            }
+          }
+        }
+
+        > fieldset.street {
+          @include grid-column(12);
+          padding-left: 0 !important;
+        }
+
+        > [name="billingAddresspayflowpro.country_id"] {
+
+          @include breakpoint(medium) {
+            @include grid-column(8);
+          }
+        }
+
+        > .field.choice {
+          @include grid-column(12);
+        }
+      }
+    }
+
+    .payment-method {
+      border-bottom: 1px solid $grey-light;
+      padding-bottom: $global-padding;
+      margin-bottom: $global-margin;
+
+      ul {
+        list-style: none;
+
+        li {
+          display: inline-block;
+        }
+      }
+
+      .payment.items.ccard {
+
+        br {
+          display: none;
+        }
+      }
+
+      .field.number.required {
+        @include grid-column(12);
+        padding-left: 0 !important;
+        margin-top: $global-margin;
+      }
+
+      .credit-card-types {
+
+        li {
+          padding-top: 0;
+        }
+      }
+
+      .field.date {
+
+        .field.no-label.month,
+        .field.no-label.year {
+          @include grid-column(12);          
+
+          @include breakpoint(medium) {
+            @include grid-column(4);
+            float: left !important;
+          }
+        }
+
+        .field.no-label.month {
+
+          @include breakpoint(medium) {
+            padding-left: 0 !important;
+          }
+        }
+      }
+
+      .field.cvv {
+
+        @include breakpoint(medium) {
+          @include grid-column(4);
+          margin-top: $global-margin * -2;
+        }
+      }
+
+      .field-tooltip.toggle {
+        cursor: pointer;
+
+        &:not(._active) {
+          .field-tooltip-content {
+            display: none;
+          }
+        }
+
+        .field-tooltip-content {
+          margin-top: $global-margin;
+
+          @include breakpoint(medium) {
+            width: rem-calc(400);
+            margin-left: $global-margin * -8;
+          }
+        }
       }
     }
   }
