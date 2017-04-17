@@ -54,6 +54,14 @@
   }
 }
 
+// product review actions
+.reviews-actions {
+
+  .action.view {
+    margin-right: $global-margin * 1.5;
+  }
+}
+
 //Add printer icon for "Print This Page" link
 .action.print {
 
