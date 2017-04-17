@@ -3,13 +3,16 @@
 //Edit and Remove Item buttons/links turned to icons.
 // -delete and -edit are from main cart with .delete and .edit from minicart
 
+.product-item-actions,
 .product.actions,
 .item-actions {
 
   .action.delete,
   .action.edit,
   .action-delete,
-  .action-edit {
+  .action-edit,
+  .action.towishlist,
+  .action-towishlist {
 
     display: inline-block;
 
@@ -41,6 +44,14 @@
       display: inline-block;
     };
   }
+
+  // add heart icon for add to wishlist
+  .action.towishlist,
+  .action-towishlist {
+    @include icon($position: before, $icon: heart, $icon-set: 'fontawesome') {
+      display: inline-block;
+    };
+  }
 }
 
 //Add printer icon for "Print This Page" link
@@ -49,30 +60,4 @@
   @include icon($position: before, $icon-set: 'fontawesome', $icon: print) {
     display: inline-block;
   };
-}
-
-// Add heart icon for add to wishlist
-.action.towishlist {
-
-  @include icon($position: before, $icon-set: 'fontawesome', $icon: heart) {
-    display: inline-block;
-  };
-
-  > span {
-    font-size: 0;
-    visibility: hidden;
-  }
-}
-
-// Add compare icon for add to compare
-.action.tocompare {
-
-  @include icon($position: before, $icon-set: 'fontawesome', $icon: compare) {
-    display: inline-block;
-  };
-
-  > span {
-    font-size: 0;
-    visibility: hidden;
-  }
 }
