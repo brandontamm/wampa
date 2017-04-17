@@ -8,27 +8,6 @@
     margin: $global-margin 0;
   }
 
-  .shipping-address-items {
-
-    div {
-
-      @include grid-column(12);
-      margin: $global-margin 0;
-      padding: $global-padding;
-
-      @include breakpoint(medium) {
-
-        @include grid-column(6);
-      }
-
-      &.selected-item {
-
-        background-color: $grey-light;
-        border-radius: $global-radius;
-      }
-    }
-  }
-
   .opc-wrapper {
 
     .checkout-shipping-address,
@@ -76,6 +55,52 @@
 
         > .field.choice {
           @include grid-column(12);
+        }
+      }
+    }
+
+    .shipping-address-items {
+      display: block;
+      width: 100%;
+      position: relative;
+      padding-bottom: $global-padding;
+      margin-bottom: $global-margin * 2;
+
+      @include breakpoint(medium) {
+        display: table;
+      }
+
+      &:after {
+        content: '';
+        clear: both;
+        display: block;
+      }
+      
+      .shipping-address-item {
+        padding: $global-padding * 2;
+        margin: $global-margin;
+
+        @include breakpoint(medium) {
+          display: table-cell;
+          border-right: 1px solid $grey;
+
+          &:last-child {
+            border: 0;
+          }
+        }
+
+        &.selected-item {
+          @include icon($position: before, $icon-set: fontawesome, $icon: check) {
+            color: $white;
+            font-size: $global-font-size * 1.5;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: $global-padding;
+            background-color: $secondary-color;
+          };
+          border: 2px solid $secondary-color;
+          position: relative;
         }
       }
     }
