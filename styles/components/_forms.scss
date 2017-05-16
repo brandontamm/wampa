@@ -41,6 +41,13 @@ select:focus {
   line-height: $global-padding;
 }
 
+select {
+
+  &:disabled {
+    background-color: scale-color($secondary-color, $alpha: -85%);
+  }
+}
+
 [type=checkbox],
 [type=radio],
 .field [type=checkbox],
@@ -52,6 +59,26 @@ select:focus {
   vertical-align: middle;
 }
 
+fieldset,
+.fieldset {
+  background-color: $white;
+  border: 0;
+
+  legend {
+    margin: 0;
+    margin-left: $global-margin * -0.1875;
+    padding: ($global-padding / 2) ($global-padding * 0.1875) 0;
+    background: transparent;
+    height: 0;
+    margin-bottom: $global-margin / 2;
+
+    > span {
+      display: block;
+      margin-top: $global-margin;
+    }
+  }
+}
+
 label {
 
   &.label {
@@ -59,4 +86,26 @@ label {
     background-color: transparent;
     padding-left: 0;
   }
+}
+
+//required asterisk on forms
+.required,
+._required {
+
+  > .label {
+
+    span {
+
+      &::after {
+        content: '*';
+        color: $secondary-color;
+        margin-left: $global-margin / 6;
+      }
+    }
+  }
+}
+
+// Mage error warning
+.mage-error {
+  color: scale-color(map-get($foundation-palette, alert), $alpha: -40%);
 }

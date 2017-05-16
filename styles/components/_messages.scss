@@ -1,0 +1,24 @@
+// Password Strength Meter
+.password-strength-meter,
+.password-strength-meter-0 {
+
+  span {
+    color: map-get($foundation-palette, alert);
+  }
+}
+
+.password-strength-meter-1 {
+
+  span {
+    color: map-get($foundation-palette, warning);
+  }
+}
+
+.password-strength-meter-2,
+.password-strength-meter-3,
+.password-strength-meter-4 {
+
+  span {
+    color: map-get($foundation-palette, success);
+  }
+}

@@ -24,5 +24,14 @@
         margin-bottom: 0;
       }
     }
+
+    .box-actions {
+
+      a + a {
+        border-left: 1px solid $grey;
+        margin-left: $global-margin;
+        padding-left: $global-padding;
+      }
+    }
   }
 }
