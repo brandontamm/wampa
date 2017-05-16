@@ -12,7 +12,9 @@
   .action-delete,
   .action-edit,
   .action.towishlist,
-  .action-towishlist {
+  .action-towishlist,
+  .action-gift,
+  .action.gift {
 
     display: inline-block;
 
@@ -50,6 +52,16 @@
   .action-towishlist {
     @include icon($position: before, $icon: heart, $icon-set: 'fontawesome') {
       display: inline-block;
+    };
+  }
+
+  // gift options in cart icon
+  .action.gift,
+  .action-gift {
+
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: fa-gift) {
+      display: inline-block;
+
     };
   }
 }
