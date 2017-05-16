@@ -61,8 +61,8 @@
 
     @include icon($position: before, $icon-set: 'fontawesome', $icon: fa-gift) {
       display: inline-block;
-
     };
+    float: right;
   }
 }
 
