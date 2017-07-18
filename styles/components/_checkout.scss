@@ -1,5 +1,6 @@
 //Checkout Process Page
-.page-layout-checkout {
+.page-layout-checkout,
+.checkout-index-index {
 
   .step-title {
 
@@ -7,23 +8,181 @@
     margin: $global-margin 0;
   }
 
-  .shipping-address-items {
+  .opc-wrapper {
 
-    div {
+    .checkout-shipping-address,
+    .billing-address-form {
 
-      @include grid-column(12);
-      margin: $global-margin 0;
-      padding: $global-padding;
-
-      @include breakpoint(medium) {
-
-        @include grid-column(6);
+      .choice {
+        margin-bottom: $global-margin;
       }
 
-      &.selected-item {
+      .fieldset.address {
+        @include grid-row;
 
-        background-color: $grey-light;
-        border-radius: $global-radius;
+        fieldset {
+          clear: left;
+
+          .label {
+            background-color: transparent;
+          }
+        }
+
+        > div {
+          @include grid-column(12);
+
+          @include breakpoint(medium) {
+            @include grid-column(4);
+            padding-left: 0 !important;
+
+            &:last-child {
+              float: left !important;
+            }
+          }
+        }
+
+        > fieldset.street {
+          @include grid-column(12);
+          padding-left: 0 !important;
+        }
+
+        > [name="billingAddresspayflowpro.country_id"] {
+
+          @include breakpoint(medium) {
+            @include grid-column(8);
+          }
+        }
+
+        > .field.choice {
+          @include grid-column(12);
+        }
+      }
+    }
+
+    .shipping-address-items {
+      display: block;
+      width: 100%;
+      position: relative;
+      padding-bottom: $global-padding;
+      margin-bottom: $global-margin * 2;
+
+      @include breakpoint(medium) {
+        display: table;
+      }
+
+      &:after {
+        content: '';
+        clear: both;
+        display: block;
+      }
+      
+      .shipping-address-item {
+        padding: $global-padding * 2;
+        margin: $global-margin;
+
+        @include breakpoint(medium) {
+          display: table-cell;
+          border-right: 1px solid $grey;
+
+          &:last-child {
+            border: 0;
+          }
+        }
+
+        &.selected-item {
+          @include icon($position: before, $icon-set: fontawesome, $icon: check) {
+            color: $white;
+            font-size: $global-font-size * 1.5;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: $global-padding;
+            background-color: $secondary-color;
+          };
+          border: 2px solid $secondary-color;
+          position: relative;
+        }
+      }
+    }
+
+    .payment-method {
+      border-bottom: 1px solid $grey-light;
+      padding-bottom: $global-padding;
+      margin-bottom: $global-margin;
+
+      ul {
+        list-style: none;
+
+        li {
+          display: inline-block;
+        }
+      }
+
+      .payment.items.ccard {
+
+        br {
+          display: none;
+        }
+      }
+
+      .field.number.required {
+        @include grid-column(12);
+        padding-left: 0 !important;
+        margin-top: $global-margin;
+      }
+
+      .credit-card-types {
+
+        li {
+          padding-top: 0;
+        }
+      }
+
+      .field.date {
+
+        .field.no-label.month,
+        .field.no-label.year {
+          @include grid-column(12);          
+
+          @include breakpoint(medium) {
+            @include grid-column(4);
+            float: left !important;
+          }
+        }
+
+        .field.no-label.month {
+
+          @include breakpoint(medium) {
+            padding-left: 0 !important;
+          }
+        }
+      }
+
+      .field.cvv {
+
+        @include breakpoint(medium) {
+          @include grid-column(4);
+          margin-top: $global-margin * -2;
+        }
+      }
+
+      .field-tooltip.toggle {
+        cursor: pointer;
+
+        &:not(._active) {
+          .field-tooltip-content {
+            display: none;
+          }
+        }
+
+        .field-tooltip-content {
+          margin-top: $global-margin;
+
+          @include breakpoint(medium) {
+            width: rem-calc(400);
+            margin-left: $global-margin * -8;
+          }
+        }
       }
     }
   }

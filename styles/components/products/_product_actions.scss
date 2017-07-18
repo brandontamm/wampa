@@ -3,13 +3,18 @@
 //Edit and Remove Item buttons/links turned to icons.
 // -delete and -edit are from main cart with .delete and .edit from minicart
 
+.product-item-actions,
 .product.actions,
 .item-actions {
 
   .action.delete,
   .action.edit,
   .action-delete,
-  .action-edit {
+  .action-edit,
+  .action.towishlist,
+  .action-towishlist,
+  .action-gift,
+  .action.gift {
 
     display: inline-block;
 
@@ -40,6 +45,32 @@
     @include icon($position: before, $icon-set: 'fontawesome', $icon: delete) {
       display: inline-block;
     };
+  }
+
+  // add heart icon for add to wishlist
+  .action.towishlist,
+  .action-towishlist {
+    @include icon($position: before, $icon: heart, $icon-set: 'fontawesome') {
+      display: inline-block;
+    };
+  }
+
+  // gift options in cart icon
+  .action.gift,
+  .action-gift {
+
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: fa-gift) {
+      display: inline-block;
+    };
+    float: right;
+  }
+}
+
+// product review actions
+.reviews-actions {
+
+  .action.view {
+    margin-right: $global-margin * 1.5;
   }
 }
 

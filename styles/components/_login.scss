@@ -1,12 +1,165 @@
-//Customer Login
+//Customer login page
 .login-container {
 
-  > div {
+  .customer-account-login & {
 
+    fieldset {
+      padding: $global-padding * 2.5;
+      margin-top: 0;
+      border: none;
+    }
+
+    .block-customer-login {
+      margin-bottom: $global-margin * 2;
+
+      @include breakpoint(medium) {
+        margin-bottom: $global-margin * 4;
+        @include grid-column-position(6);
+      }
+    }
+
+    .block-new-customer {
+      @include breakpoint(medium) {
+        @include grid-column-position(-6);
+      }
+
+      .block-content {
+        padding: $global-padding * 2;
+      }
+    }
+  }
+
+  > div {
     @include grid-column(12);
 
     @include breakpoint(medium) {
       @include grid-column(6);
+    }
+
+    &.block-new-customer {
+
+      .block-content {
+        background-color: $white;
+        padding: $global-padding;
+      }
+    }
+
+    .block-title {
+      padding: $global-padding;
+      background-color: $white;
+      color: $secondary-color;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      border-bottom: 1px solid $grey-light;
+    }
+
+    .actions-toolbar {
+
+      .primary,
+      .secondary {
+        display: inline-block;
+      }
+
+      .secondary {
+        float: none;
+
+        @include breakpoint(medium) {
+          float: right;
+        }
+      }
+
+      .primary a {
+        @extend %button;
+        @include button-style;
+      }
+    }
+  }
+}
+
+// Account creation page
+.customer-account-create {
+
+  .page-main {
+    @include grid-row;
+    float: none;
+    padding: 0;
+
+    .page-title-wrapper {
+
+      @include breakpoint(medium) {
+        padding-left: 0;
+      }
+    }
+
+    .create.info,
+    .create.account:not(form) {
+      @include grid-column(12);
+      border: 0;
+
+      @include breakpoint(medium) {
+        @include grid-column(6);
+        min-height: rem-calc(370);
+
+        &:first-child {
+          border-right: 1px solid scale-color($secondary-color, $alpha: -80%);
+        }
+      }
+
+      legend {
+        background-color: transparent;
+        padding-top: $global-padding;
+        height: 0;
+        margin-bottom: $global-margin * 1.5;
+        color: $secondary-color;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      br {
+        display: none;
+      }
+    }
+
+    .actions-toolbar {
+      @include grid-column(12);
+      padding-bottom: $global-padding;
+      margin-top: $global-margin * 2;
+    }
+
+    .submit.primary {
+      float: none;
+
+      @include breakpoint(medium) {
+        float: right;
+      }
+    }
+
+    .action.back {
+      @extend %button;
+      @include button-style;
+    }
+  }
+}
+
+// Forgot password screen
+.form.password.forget {
+
+  .actions-toolbar {
+    @include grid-column(12);
+    margin-bottom: $global-margin;
+
+    .submit.primary {
+      float: none;
+      margin-bottom: $global-margin;
+
+      @include breakpoint(medium) {
+        float: right;
+      }
+    }
+
+    .action.back {
+      @extend %button;
+      @include button-style;
     }
   }
 }

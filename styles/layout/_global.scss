@@ -1,0 +1,267 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $body-background;
+
+  .page-wrapper {
+    background-color: $body-background;
+    margin: 0 auto;
+    max-width: 1920px;
+    overflow: hidden;
+  }
+
+  .row {
+    @include grid-row;
+  }
+}
+
+main {
+
+  > .columns {
+    padding: 0;
+
+    > .column.main {
+      padding: 0;
+    }
+  }
+
+  .container-fluid.home {
+    padding: 0;
+  }
+}
+
+.page.messages {
+  padding: 0;
+}
+
+.page-layout-1column:not(.catalog-product-view):not(.customer-account-create),
+.page-layout-checkout,
+.cms-no-route {
+
+  .page-main {
+    @include grid-row;
+    float: none;
+    padding: 0;
+
+    > * {
+      @include grid-column(12);
+    }
+
+    > .main {
+      margin-top: $global-margin * 2;
+    }
+  }
+}
+
+.cms-no-route,
+.checkout-onepage-success,
+.cms-page-view,
+.loffaq-question-view  {
+
+  main {
+    margin-bottom: $global-margin * 2;
+
+    @include breakpoint(medium) {
+      margin-bottom: $global-margin * 4;
+    }
+  }
+
+  .actions-toolbar {
+
+    .primary {
+      float: left;
+    }
+  }
+}
+
+.cms-page-view,
+.loffaq-question-view {
+
+  main {
+
+    .main {
+      margin-top: 0 !important;
+
+      h1,
+      .faq-cat-title {
+        margin-bottom: $global-margin * 3;
+      }
+    }
+  }
+}
+
+.page-layout-2columns-left:not(.cms-home),
+.page-layout-2columns-right:not(.cms-no-route),
+.page-layout-2columns-left:not(.catalog-category-view) {
+
+  .page-main {
+    @include grid-row;
+    float: none;
+    padding: 0;
+
+    > * {
+      @include grid-column(12);
+    }
+
+    > .main {
+      @include grid-column(12);
+      @include grid-column-position(0);
+      margin-top: $global-margin * 2;
+
+      @include breakpoint(medium) {
+        margin-bottom: $global-margin * 4;
+      }
+
+      @include breakpoint(medium) {
+        @include grid-column(9);
+        @include grid-column-position(3);
+      }
+    }
+
+    > .sidebar {
+      @include grid-column(12);
+      margin-top: $global-margin * 2;
+
+      @include breakpoint(medium) {
+        @include grid-column(3);
+        @include grid-column-position(-9);
+      }
+
+      &.sidebar-additional {
+        margin-bottom: $global-margin * 2;
+
+        @include breakpoint(medium) {
+          margin-bottom: $global-margin * 4;
+        }
+      }
+    }
+  }
+}
+
+.page-layout-2columns-left.page-products {
+
+  .page-main {
+    @include grid-row;
+    float: none;
+    padding: 0;
+
+    > * {
+      @include grid-column(12);
+    }
+
+    > .main {
+      @include grid-column(12);
+      @include grid-column-position(0);
+      margin-top: $global-margin * 2;
+
+      @include breakpoint(medium) {
+        @include grid-column(8);
+        @include grid-column-position(4);
+        margin-bottom: $global-margin * 4;
+      }
+    }
+
+    > .sidebar {
+      @include grid-column(12);
+      margin-top: $global-margin * 2;
+
+      @include breakpoint(medium) {
+        @include grid-column(4);
+        @include grid-column-position(-8);
+      }
+
+      &.sidebar-additional {
+        margin-bottom: $global-margin * 2;
+
+        @include breakpoint(medium) {
+          margin-bottom: $global-margin * 4;
+        }
+      }
+    }
+  }
+}
+
+.catalog-product-view {
+
+  .page-main {
+
+    .product-info-top {
+      @include grid-row;
+    }
+
+    .product-details {
+      margin-top: $global-margin * 2;
+
+      > div {
+        margin-bottom: $global-margin * 2;
+
+        > h2 {
+          padding-left: map-get($grid-column-gutter, small);
+          padding-right: map-get($grid-column-gutter, small);
+
+          @include breakpoint(medium) {
+            padding-left: map-get($grid-column-gutter, medium);
+            padding-right: map-get($grid-column-gutter, medium);
+          }
+        }
+
+        > * {
+          @include grid-row;
+          float: none !important;
+
+          > * {
+            @include grid-column(12);
+            padding-left: map-get($grid-column-gutter, small);
+            padding-right: map-get($grid-column-gutter, small);
+
+            @include breakpoint(medium) {
+              padding-left: map-get($grid-column-gutter, medium);
+              padding-right: map-get($grid-column-gutter, medium);
+            }
+          }
+        }
+      }
+
+      .product.attribute.description {
+
+        &::before {
+          @include grid-column(12);
+          padding-left: map-get($grid-column-gutter, small);
+          padding-right: map-get($grid-column-gutter, small);
+
+          @include breakpoint(medium) {
+            padding-left: map-get($grid-column-gutter, medium);
+            padding-right: map-get($grid-column-gutter, medium);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Contact Us Form
+.cms-contact-us {
+
+  .formbuilder-form {
+
+    .form-content {
+      @include grid-row($behavior: nest);
+
+      form {
+        @include grid-column(12);
+
+        @include breakpoint(medium) {
+          @include grid-column(8);
+        }
+      }
+
+      div.before-form-content {
+        @include grid-column(12);
+
+        @include breakpoint(medium) {
+          @include grid-column(4);
+        }
+      }
+    }
+  }
+}

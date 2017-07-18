@@ -44,8 +44,8 @@
 // so on). It also contains the _grid file which is the grid system used to
 // build the layout.
 
+@import 'layout/global';
 @import 'layout/header';
-@import 'layout/columns';
 @import 'layout/footer';
 @import 'layout/copyright';
 @import 'layout/modals';
@@ -75,6 +75,7 @@
 @import 'components/products/product_toolbar';
 @import 'components/products/product_comparison';
 @import 'components/products/product_actions';
+@import 'components/products/product_addtocart';
 @import 'components/cart/shopping_cart';
 @import 'components/cart/minicart';
 @import 'components/account/account_dashboard';
@@ -83,3 +84,5 @@
 @import 'components/account/account_nav';
 @import 'components/checkout';
 @import 'components/gallery';
+@import 'components/rating';
+@import 'components/messages';

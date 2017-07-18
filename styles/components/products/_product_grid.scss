@@ -27,3 +27,90 @@
     }
   }
 }
+
+.catalogsearch-result-index,
+.wishlist-index-index {
+
+  .products-grid.wishlist,
+  .grid.products-grid {
+    @include grid-row;
+    margin-bottom: $global-margin * 2;
+    padding-bottom: $global-padding;
+    background-color: $white;
+    padding-left: $global-padding;
+    padding-right: $global-padding;
+
+    .product-items {
+
+      li {
+
+        @include breakpoint(small only) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      li:not(:first-child) {
+
+        @include breakpoint(medium) {
+          border-left: 1px solid rgba($secondary-color, 0.2);
+        }
+      }
+
+      .product-item-photo {
+        display: block;
+      }
+
+      .field.qty {
+        width: 100%;
+        clear: both;
+
+        label,
+        input {
+          display: inline;
+        }
+
+        input {
+          width: 75%;
+          text-align: center;
+        }
+
+        label {
+          padding: $global-padding * 0.75;
+          padding-left: 0;
+          float: left;
+        }
+      }
+
+      .product-item-actions {
+
+        > *:not(.actions-primary) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .actions-toolbar {
+    @include grid-column(12);
+    padding-bottom: $global-padding;
+
+    .primary {
+
+      > button {
+        width: 100%;
+        margin-bottom: $global-margin;
+
+        @include breakpoint(medium) {
+          width: 30%;
+          margin-left: 3%;
+          float: left;
+        }
+      }
+    }
+
+    .secondary {
+      display: none;
+    }
+  }
+}
