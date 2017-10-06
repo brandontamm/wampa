@@ -15,6 +15,10 @@
         {
             "type": "composer",
             "url": "https://packages.augustash.com/repo/private/"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/augustash/magento2-frontools.git"
         }
     ],
     "autoload": {
