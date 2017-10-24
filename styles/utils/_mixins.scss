@@ -13,28 +13,43 @@
   font-size: rem-calc(map-get(map-get($header-sizes, 'small'), $type) * 1px);
 }
 
-//////////////////////
-// Gradient
-//////////////////////
-@mixin linear-gradient($color1, $color2, $direction) {
-  background-color: $color1; /* Old browsers */
-  background: linear-gradient(to $direction, $color1 0%, $color2 100%);
-}
-
-@mixin radial-gradient($center, $edge) {
-  background-color: $edge;
-  background: radial-gradient(ellipse at center, $center 0%, $edge 75%);
-}
-
 //////////////////
-//button styles - Defines base button styles
+//button base styles
 //////////////////
-@mixin button-style($outline: false, $reverse: false, $large: false) {
-  @include linear-gradient($blue-light, darken($blue-light, 10%), bottom);
+@mixin button-base {
+  display: inline-block;
+  font-size: rem-calc(16);
+  white-space: nowrap;
+  font-weight: 700;
+  font-family: $body-font-family;
+  line-height: $global-lineheight;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $secondary-color;
+  color: $white;
+  border: 1px solid $secondary-color;
+  padding: ($global-padding * 0.625) ($global-padding * 1.5625);
+  margin: 0;
+  cursor: pointer;
+  transition: background-color 200ms, border 200ms, color 200ms;
+
+  &:visited,
+  &:active,
+  &:focus {
+    color: $white;
+  }
 
   &:hover {
-    @include linear-gradient(lighten($blue-light, 5%), $blue-light, bottom);
+    background-color: darken($secondary-color, 10%);
+    border-color: darken($secondary-color, 10%);
+    color: $white;
   }
+}
+
+//////////////////
+//button - 4 style combinations
+@mixin button($outline: false, $reverse: false, $large: false, $alt: false) {
+  @include button-base;
 
   @if $large == true {
     font-size: rem-calc(15);
@@ -42,7 +57,7 @@
   }
 
   @if $outline == true {
-    @include linear-gradient(rgba($white, 0.1), rgba($white, 0.5), bottom);
+    background-color: transparent;
     color: $primary-color;
 
     &:visited,
@@ -52,31 +67,33 @@
     }
 
     &:hover {
-      @include linear-gradient(rgba($white, 0.1), darken($white, 15%), bottom);
+      background-color: darken($primary-color, 15%);
       color: darken($primary-color, 15%);
     }
   }
 
   @if $reverse == true {
-    @include linear-gradient($white, darken($white, 5%), bottom);
-    color: $primary-color;
-    border: 1px solid $white;
+    background-image: none;
+    border-color: $primary-color;
+    border-radius: 0;
+    background-color: $primary-color;
+    color: $white;
 
     &:visited,
     &:active,
     &:focus {
-      color: $primary-color;
+      color: $white;
     }
 
     &:hover {
-      @include linear-gradient($white, darken($white, 15%), bottom);
-      border-color: darken($white, 15%);
-      color: $primary-color;
+      background-image: none;
+      background-color: darken($secondary-color, 10%);
+      border-color: darken($secondary-color, 10%);
     }
 
     @if $outline == true {
-      @include linear-gradient(rgba($white, 0.1), rgba($white, 0.4), bottom);
-      color: $blue-light;
+      background-color: transparent;
+      color: $white;
       border: 1px solid rgba($white, 0.5);
 
       &:visited,
@@ -86,14 +103,49 @@
       }
 
       &:hover {
-        @include linear-gradient(rgba($blue-light, 0.1), $blue-light, bottom);
+        background-color: $blue-light;
         border-color: rgba($blue-light, 0.6);
         color: $white;
       }
     }
   }
 
+  @if $alt == true {
+    background-image: none;
+    border-color: transparent;
+    border-radius: 0;
+    background-color: transparent;
+    color: $secondary-color;
+    text-transform: none;
+
+    &:visited,
+    &:active,
+    &:focus {
+      color: $secondary-color;
+    }
+
+    &:hover {
+      background-image: none;
+      color: $primary-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
   @content;
+}
+
+//////////////////////
+// Gradient
+//////////////////////
+@mixin linear-gradient($color1, $color2, $direction) {
+  background-color: $color1;
+  background: linear-gradient(to $direction, $color1 0%, $color2 100%);
+}
+
+@mixin radial-gradient($center, $edge) {
+  background-color: $edge;
+  background: radial-gradient(ellipse at center, $center 0%, $edge 75%);
 }
 
 //////////////////////
@@ -160,12 +212,12 @@
 }
 
 @mixin content-padding-gap($side: false) {
-  padding-top: $global-padding * 3;
-  padding-bottom: $global-padding * 3;
+  padding-top: $global-padding * 3.5;
+  padding-bottom: $global-padding * 3.5;
 
   @include breakpoint(medium) {
-    padding-top: $global-padding * 4;
-    padding-bottom: $global-padding * 4;
+    padding-top: $global-padding * 5;
+    padding-bottom: $global-padding * 5;
 
     @if $side {
       padding-left: $global-padding / 2;
@@ -195,6 +247,7 @@
       font-variant: normal;
       text-transform: none;
       font-family: $icon-set;
+      transition: color 300ms ease;
     }
     // Include any extra rules supplied for the pseudo-element
     @content;
@@ -211,10 +264,11 @@ $icons: (
   pinterest: '\f231',
   instagram: '\f16d',
   search: '\f002',
-  plus: '\e114',
+  plus: '\f067',
+  minus: '\f068',
   close: '\f00d',
   arrow-left: '\e314',
-  arrow-right: '\e315',
+  arrow-right: '\f061',
   arrow-up: '\f062',
   arrow-down: '\f063',
   pdf: '\f1c1',
@@ -225,8 +279,14 @@ $icons: (
   revisions: '\f01e',
   active: '\f06e',
   devel: '\f121',
-  menu: '\f039',
+  menu: '\f0c9',
+  angle-left: '\f104',
   more: '\f105',
+  less: '\f107',
+  chevron-down: '\f078',
+  chevron-up: '\f077',
+  chevron-right: '\f054',
+  chevron-left: '\f053',
   tag: '\f02b',
   folder: '\f07b',
   file: '\f15b',
@@ -235,9 +295,92 @@ $icons: (
   shopping-bag: '\f290',
   shopping-basket: '\f291',
   print: '\f02f',
+  check: '\f00c',
+  star: '\f005',
+  star-half: '\f123',
+  basket: '\e14d',
+  email: '\f003',
+  pencil: '\f040',
+  compare: '\f14a',
   heart: '\f004',
+  user: '\f007',
   grid: '\f00a',
   list: '\f00b',
-  compare: '\f080',
-  fa-gift: '\f06b',
+  user-add: '\f234',
+  check-circle: '\f058',
 );
+
+/////////////////////
+// CSS Triangle
+// Creates a CSS triangle, which can be used for dropdown arrows, dropdown pips, and more.
+// ---------
+@mixin css-triangle($size, $color, $direction, $position) {
+
+  @if ($position == before) {
+
+    &::before {
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset $size;
+      content: '';
+
+      @if ($direction == down) {
+        border-bottom-width: 0;
+        border-top-style: solid;
+        border-color: $color transparent transparent;
+      }
+      @if ($direction == up) {
+        border-top-width: 0;
+        border-bottom-style: solid;
+        border-color: transparent transparent $color;
+      }
+      @if ($direction == right) {
+        border-right-width: 0;
+        border-left-style: solid;
+        border-color: transparent transparent transparent $color;
+      }
+      @if ($direction == left) {
+        border-left-width: 0;
+        border-right-style: solid;
+        border-color: transparent $color transparent transparent;
+      }
+
+      @content;
+    }
+  }
+
+  @if ($position == after) {
+
+    &::after {
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset $size;
+      content: '';
+
+      @if ($direction == down) {
+        border-bottom-width: 0;
+        border-top-style: solid;
+        border-color: $color transparent transparent;
+      }
+      @if ($direction == up) {
+        border-top-width: 0;
+        border-bottom-style: solid;
+        border-color: transparent transparent $color;
+      }
+      @if ($direction == right) {
+        border-right-width: 0;
+        border-left-style: solid;
+        border-color: transparent transparent transparent $color;
+      }
+      @if ($direction == left) {
+        border-left-width: 0;
+        border-right-style: solid;
+        border-color: transparent $color transparent transparent;
+      }
+
+      @content;
+    }
+  }
+}

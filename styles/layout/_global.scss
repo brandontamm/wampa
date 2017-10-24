@@ -40,6 +40,7 @@ main {
 
   .page-main {
     @include grid-row;
+    max-width: $grid-row-narrow;
     float: none;
     padding: 0;
 
@@ -96,6 +97,7 @@ main {
 
   .page-main {
     @include grid-row;
+    max-width: $grid-row-narrow;
     float: none;
     padding: 0;
 
@@ -142,6 +144,7 @@ main {
 
   .page-main {
     @include grid-row;
+    max-width: $grid-row-narrow;
     float: none;
     padding: 0;
 

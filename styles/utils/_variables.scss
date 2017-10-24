@@ -5,6 +5,9 @@
 // Global
 $global-width: rem-calc(1200);
 $grid-row-width: rem-calc(1200);
+$grid-row-narrow: $grid-row-width - ($global-padding * 4.5);
+$grid-row-tiny: $grid-row-width - ($global-padding * 10);
+$grid-row-wide: $grid-row-width + ($global-padding * 4.5);
 $global-radius: 4px;
 $global-lineheight: 1.66;
 $grid-column-gutter: (
