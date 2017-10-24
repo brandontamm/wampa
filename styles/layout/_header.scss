@@ -3,29 +3,40 @@
 .page-wrapper {
 
   .page-header {
-
     margin-top: 0;
 
     .panel.wrapper {
+      width: 100%;
+      position: relative;
 
       @include breakpoint(medium) {
         border-bottom: 1px solid $grey-light;
+        background-color: rgba($grey, 0.1);
+      }
+
+      .panel.header {
+        @include grid-row;
       }
     }
 
-    &::after {
-      clear: both;
-    }
-
     .header.content {
-
-      padding-left: $global-padding;
-      padding-right: $global-padding;
+      @include grid-row();
       padding-top: $global-padding * 2;
+      padding-bottom: $global-padding;
 
       .logo {
-
+        position: relative;
+        z-index: 5;
         padding-left: $global-padding;
+
+        @include breakpoint(medium) {
+          margin: ($global-margin / -2) auto ($global-margin * 2) 0;
+          padding-left: $global-padding * 4;
+        }
+
+        img {
+          margin-bottom: $global-margin * 2;
+        }
       }
     }
 }
