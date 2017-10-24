@@ -85,9 +85,7 @@
       }
 
       .filter-count-label {
-        visibility: hidden;
-        opacity: 0;
-        font-size: 0;
+        @include visually-hidden;
       }
     }
   }

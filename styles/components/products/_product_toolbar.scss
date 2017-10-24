@@ -10,6 +10,10 @@
 
   .modes {
 
+    .modes-label {
+      @include visually-hidden;
+    }
+
     .mode-grid,
     .mode-list {
       background-color: $grey-light;
