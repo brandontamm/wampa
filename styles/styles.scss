@@ -62,11 +62,12 @@
 
 @import 'components/navigation/nav--main';
 @import 'components/navigation/nav--toggle';
+@import 'components/navigation/breadcrumbs';
+@import 'components/block/block_search';
+@import 'components/block/block_search_autocomplete';
+@import 'components/block/block--filter';
 @import 'components/forms';
 @import 'components/buttons';
-@import 'components/breadcrumbs';
-@import 'components/block_search';
-@import 'components/block_search_autocomplete';
 @import 'components/login';
 @import 'components/tables';
 @import 'components/products/product_grid';

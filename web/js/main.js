@@ -1,14 +1,15 @@
-define([
-  "jquery",
-], 
-function($) {
-  "use strict";
-
+require(['jquery', 'jquery/ui'], function($){
+  
   //navigation toggle
   $('.nav-toggle').click(function () {
     $(this).toggleClass('fa-close');
     $('.nav-sections-item-content ul').toggleClass('open');
   });
 
-  return;
+  // sidebar toggle
+  $('.filter-options-title').click(function () {
+    $(this).toggleClass('open');
+    console.log('hit');
+  });
+  
 });
