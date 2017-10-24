@@ -14,25 +14,24 @@
   .action.towishlist,
   .action-towishlist,
   .action-gift,
-  .action.gift {
+  .action.gift,
+  .action.tocompare,
+  .action-tocompare {
 
     display: inline-block;
 
     &:hover {
-
       color: $red;
     }
 
     span {
-
-      display: none; //removes default edit and remove text block
+      @include visually-hidden; //removes default edit and remove text block
     }
   }
 
   //edit item in cart icon
   .action.edit,
   .action-edit {
-
     @include icon($position: before, $icon-set: 'fontawesome', $icon: edit) {
       display: inline-block;
     };
@@ -41,7 +40,6 @@
   //delete / remove item from cart icon
   .action.delete,
   .action-delete {
-
     @include icon($position: before, $icon-set: 'fontawesome', $icon: delete) {
       display: inline-block;
     };
@@ -55,10 +53,17 @@
     };
   }
 
+  // add compare icon to compare
+  .action.tocompare,
+  .action-tocompare {
+    @include icon($position: before, $icon: list, $icon-set: 'fontawesome') {
+      display: inline-block;
+    };
+  }
+
   // gift options in cart icon
   .action.gift,
   .action-gift {
-
     @include icon($position: before, $icon-set: 'fontawesome', $icon: fa-gift) {
       display: inline-block;
     };
@@ -76,7 +81,6 @@
 
 //Add printer icon for "Print This Page" link
 .action.print {
-
   @include icon($position: before, $icon-set: 'fontawesome', $icon: print) {
     display: inline-block;
   };

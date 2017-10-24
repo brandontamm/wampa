@@ -9,7 +9,6 @@
   width: auto;
   display: inline-block;
   position: relative;
-  margin-bottom: $global-margin;
 
   @include icon($position: before, $icon: star, $icon-set: fontawesome, $styles: true) {
     content: '\f005 \f005 \f005 \f005 \f005';
