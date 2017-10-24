@@ -34,10 +34,10 @@
       &.has-active {
 
         > .level-top {
-          border-color: #ff5501;
+          border-color: $red;
           border-style: solid;
           border-width: 0 0 3px;
-          color: #333333;
+          color: $grey-dark;
           text-decoration: none;
           display: inline-block;
         }
@@ -60,28 +60,28 @@
 
         &:hover,
         &.ui-state-focus {
-          color: #333333;
+          color: $grey-dark;
           text-decoration: none;
         }
       }
 
       .submenu {
-        background: #ffffff;
-        border: 1px solid #cccccc;
-        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19);
+        background: $white;
+        border: 1px solid $grey-light;
+        box-shadow: 0 5px 5px rgba($black, 0.19);
         font-weight: 400;
-        min-width: 230px;
-        padding: 15px 0;
+        min-width: rem-calc(230);
+        padding: $global-padding 0;
         display: none;
         left: 0;
         margin: 0 !important;
         padding: 0;
         position: absolute;
         z-index: 1;
-        margin-top: 11px;
+        margin-top: $global-margin * 0.75;
 
         > ul {
-          margin-top: 11px;
+          margin-top: $global-margin * 0.75;
 
           &::before,
           &::after {
@@ -92,13 +92,13 @@
           }
 
           &::before {
-            color: #ffffff;
-            left: 20px;
-            top: -20px;
+            color: $white;
+            left: $global-padding * 1.2;
+            top: $global-padding * -1.2;
             border: 10px solid transparent;
             height: 0;
             width: 0;
-            border-bottom-color: #ffffff;
+            border-bottom-color: $white;
             z-index: 4;
           }
 
@@ -106,10 +106,10 @@
             border: 11px solid transparent;
             height: 0;
             width: 0;
-            border-bottom-color: #cccccc;
-            color: #cccccc;
-            left: 19px;
-            top: -22px;
+            border-bottom-color: $grey-light;
+            color: $grey-light;
+            left: $global-padding * 1.2;
+            top: $global-padding * -1.2;
             z-index: 3;
           }
         }
@@ -117,13 +117,13 @@
         a {
           display: block;
           line-height: inherit;
-          color: #575757;
-          padding: 8px 20px;
+          color: $grey-dark;
+          padding: ($global-padding / 2) ($global-padding * 1.5);
 
           &:hover,
           &.ui-state-focus {
-            background: #e8e8e8;
-            color: #333333;
+            background: $grey-light;
+            color: $grey-dark;
             text-decoration: none;
           }
         }
@@ -131,10 +131,10 @@
         &.active {
 
           > a {
-            border-color: #ff5501;
+            border-color: $red;
             border-style: solid;
             border-width: 0 0 0 3px;
-            color: #333333;
+            color: $grey-dark;
           }
         }
 
