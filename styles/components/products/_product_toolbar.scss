@@ -15,8 +15,12 @@
 
   // Display mode options
   .modes {
-    display: inline-block;
+    display: none;
     margin-right: $global-margin;
+
+    @include breakpoint(medium) {
+      display: inline-block;
+    }
 
     .modes-label {
       @include visually-hidden;
@@ -70,7 +74,11 @@
   .toolbar-amount {
     display: inline-block;
     position: absolute;
-    top: $global-padding * 1.5;
+    top: $global-padding * -1.5;
+
+    @include breakpoint(medium) {
+      top: $global-padding * 1.5;
+    }
   }
 
   // Number of items per page
@@ -191,9 +199,20 @@
       display: none;
     }
 
-    .pages,
     .limiter {
+
+      @include breakpoint(large) {
+        display: block;
+      }
+    }
+
+    .pages {
       display: block;
+
+      @include breakpoint(medium down) {
+        width: 100%;
+        text-align: center;
+      }
     }
   }
 }
