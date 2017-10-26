@@ -150,6 +150,10 @@
       display: inline-block;
       transition: background-color 500ms ease, color 500ms ease;
 
+      a {
+        display: block;
+      }
+
       .label {
         @include visually-hidden;
       }

@@ -71,6 +71,33 @@
   }
 }
 
+// Pagination Actions
+.pages {
+
+  .action {
+    
+    &.previous {
+      @include icon($position: before, $icon-set: fontawesome, $icon: angle-left) {
+        font-weight: bold;
+      };
+
+      span {
+        display: none;
+      }
+    }
+
+    &.next {
+      @include icon($position: before, $icon-set: fontawesome, $icon: more){
+        font-weight: bold;
+      };
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
 // product review actions
 .reviews-actions {
 
