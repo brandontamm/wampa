@@ -147,6 +147,7 @@ main {
     max-width: $grid-row-narrow;
     float: none;
     padding: 0;
+    position: relative;
 
     > * {
       @include grid-column(12);

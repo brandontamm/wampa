@@ -2,15 +2,84 @@
 .block.filter {
 
   .block-title {
-    visibility: hidden;
-    opacity: 0;
-    font-size: 0;
+    @extend %button;
+    @include button($outline: true);
+    position: absolute;
+    top: 0;
+    right: $global-padding;
+
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  .block-content {
+
+    @include breakpoint(small only) {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $white;
+      z-index: 99;
+
+      &.active {
+        display: block;
+      }
+    }
   }
 
   .block-subtitle {
     display: block;
     margin-bottom: $global-margin;
+    margin-top: $global-margin;
     font-size: $global-font-size * 1.2;
+    position: relative;
+
+    @include breakpoint(small only) {
+      @include icon($position: after, $icon-set: fontawesome, $icon: close){
+        position: absolute;
+        right: $global-padding;
+        top: 0;
+      };
+      cursor: pointer;
+      padding-left: $global-padding / 2;
+    }
+  }
+
+  // Now Shopping By
+  .filter-current {
+    
+    .block-subtitle {
+      margin-top: 0;
+    }
+
+    .item {
+      position: relative;
+
+      .filter-label {
+        font-weight: bold;
+        padding-left: $global-padding * 1.25;
+
+        &::after {
+          content: ':';
+        }
+      }
+
+      .action.remove {
+        @include icon($position: before, $icon-set: fontawesome, $icon: close);
+        position: absolute;
+        left: 0;
+        right: 0; // left and right 0 make this action full width of the name - could be updated so only the icon is the remove link
+        top: 0;
+
+        span {
+          @include visually-hidden;
+        }
+      }
+    }
   }
 
   .filter-options-title {
