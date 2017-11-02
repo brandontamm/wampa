@@ -1,6 +1,15 @@
 
 .checkout-cart-index {
 
+  .cart-empty {
+    padding-bottom: $global-padding * 4;
+    padding-left: $global-padding / 2;
+
+    @include breakpoint(medium) {
+      padding-left: $global-padding;
+    }
+  }
+
   .cart-container {
     position: relative;
     padding-bottom: $global-padding * 4;
@@ -15,14 +24,6 @@
 
       .summary.title {
         @include header-size(h3);
-      }
-
-      .title:not(.summary) {
-        color: $secondary-color;
-        padding: ($global-padding) ($global-padding / 2);
-        background-color: scale-color($secondary-color, $alpha: -80%);
-        outline: none;
-        cursor: pointer;
       }
 
       .content {
@@ -93,18 +94,6 @@
       }
     }
 
-    .product-item-photo,
-    .product-item-details {
-      float: left;
-    }
-
-    .qty {
-
-      label {
-        display: none;
-      }
-    }
-
     .actions-toolbar {
       text-align: right;
 
@@ -155,13 +144,6 @@
           float: none;
           text-align: center;
         }
-      }
-    }
-
-    th {
-
-      &.col.qty {
-        width: 15%;
       }
     }
   }
