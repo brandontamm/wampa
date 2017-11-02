@@ -1,6 +1,82 @@
 
 .cart.table-wrapper {
 
+  table {
+
+    @include breakpoint(small only) {
+      @include table-stack($header: false);
+
+      tr {
+        
+        td.col.price,
+        td.col.qty,
+        td.col.subtotal  {
+
+          &::before {
+            font-weight: bold;
+            margin-right: $global-margin / 3;
+          }
+        }
+
+        td.col.price {
+
+          &::before {
+            content: 'Price:';
+          }
+        }
+
+        td.col.qty {
+
+          &::before {
+            content: 'Quantity:';
+          }
+
+          > div {
+            display: inline-block;
+            margin-bottom: $global-margin * -2;
+          }
+        }
+
+        td.col.subtotal {
+
+          &::before {
+            content: 'Subtotal:';
+          }
+        }
+      }
+    }
+
+    td {
+      
+      &.col.price,
+      &.col.subtotal {
+
+        @include breakpoint(medium) {
+          font-size: $global-font-size * 1.25;
+          padding-top: $global-padding * 1.75;
+        }
+      }
+  
+      &.col.qty {
+
+        @include breakpoint(medium) {
+          padding-top: $global-padding * 1.5;
+        }
+
+        label {
+          display: none;
+        }
+      }
+    }
+
+    th {
+      
+      &.col.qty {
+        width: 15%;
+      }
+    }
+  }
+
   .product-item-photo,
   .product-item-details {
     display: table-cell;
@@ -8,7 +84,7 @@
   }
 
   .product-item-photo {
-    margin-right: $global-margin;
+    padding-right: $global-padding * 2;
   }
 
   .product-item-details {
@@ -41,28 +117,6 @@
           padding-left: $global-padding / 10;
         }
       }
-    }
-  }
-
-  .col.price,
-  .col.subtotal {
-
-    > span {
-      font-size: $global-font-size * 1.25;
-    }
-  }
-
-  .qty {
-
-    label {
-      display: none;
-    }
-  }
-
-  th {
-    
-    &.col.qty {
-      width: 15%;
     }
   }
 }
