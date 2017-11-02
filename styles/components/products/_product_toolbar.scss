@@ -95,6 +95,11 @@
     float: right;
     display: table;
 
+    @include breakpoint(small only) {
+      float: none;
+      width: 100%;
+    }
+
     > * {
       display: table-cell;
     }

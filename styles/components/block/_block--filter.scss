@@ -24,6 +24,7 @@
       left: 0;
       background-color: $white;
       z-index: 99;
+      overflow: scroll;
 
       &.active {
         display: block;
@@ -33,24 +34,31 @@
 
   .block-subtitle {
     display: block;
-    margin-bottom: $global-margin;
-    margin-top: $global-margin;
+    padding-bottom: $global-padding;
+    padding-top: $global-padding;
     font-size: $global-font-size * 1.2;
     position: relative;
 
     @include breakpoint(small only) {
-      @include icon($position: after, $icon-set: fontawesome, $icon: close){
+      @include icon($position: after, $icon-set: fontawesome, $icon: close) {
         position: absolute;
         right: $global-padding;
-        top: 0;
+        top: $global-padding;
+        color: $white;
       };
       cursor: pointer;
       padding-left: $global-padding / 2;
+      background-color: $primary-color;
+      color: $white;
     }
   }
 
   // Now Shopping By
   .filter-current {
+
+    @include breakpoint(small only) {
+      display: none;
+    }
     
     .block-subtitle {
       margin-top: 0;
@@ -80,12 +88,19 @@
         }
       }
     }
+
+    & + .filter-actions {
+
+      @include breakpoint(small only) {
+        display: none;
+      }
+    }
   }
 
   .filter-options-title {
     @include icon($position: after, $icon-set: fontawesome, $icon: more) {
       position: absolute;
-      right: $global-padding * 0.75;
+      right: $global-padding;
       top: $global-padding / 4;
       font-size: $global-font-size * 1.5;
     };
@@ -94,13 +109,17 @@
     font-weight: 600;
     margin: 0;
     overflow: hidden;
-    padding: ($global-padding * 0.75) ($global-padding * 2) ($global-padding * 0.75) ($global-padding / 4);
+    padding: ($global-padding * 0.75) ($global-padding);
     text-transform: uppercase;
     word-break: break-all;
     z-index: 1;
     display: block;
     text-decoration: none;
     border-top: 1px solid $grey-light;
+
+    @include breakpoint(medium) {
+      padding: ($global-padding * 0.75) ($global-padding * 2) ($global-padding * 0.75) ($global-padding / 4);
+    }
 
     + .filter-options-content {
       display: none;
@@ -117,7 +136,11 @@
 
   .filter-options-content {
     margin: 0;
-    padding: ($global-padding / 4) ($global-padding / 4) $global-padding;
+    padding: 0 $global-padding ($global-padding / 4);
+
+    @include breakpoint(medium) {
+      padding: ($global-padding / 4) ($global-padding / 4) $global-padding;
+    }
   }
 
   .items {
