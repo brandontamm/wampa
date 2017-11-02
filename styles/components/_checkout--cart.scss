@@ -45,6 +45,7 @@
 
     .block.shipping {
       margin: $global-margin 0 0;
+      padding-bottom: $global-padding;
 
       .fieldset {
         margin-top: 0;
@@ -58,6 +59,7 @@
     }
 
     .block.discount {
+      padding-top: $global-padding;
 
       > .title {
         text-align: left;

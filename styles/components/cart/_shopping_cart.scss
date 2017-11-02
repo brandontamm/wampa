@@ -20,7 +20,7 @@
 
   [aria-selected="false"] {
 
-    @include icon($position: before, $icon-set: 'fontawesome', $icon: menu) {
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: chevron-right) {
       margin: $global-margin;
       vertical-align: top;
     };
@@ -28,7 +28,7 @@
 
   [aria-selected="true"] {
 
-    @include icon($position: before, $icon-set: 'fontawesome', $icon: close) {
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: chevron-down) {
       margin: $global-margin;
       vertical-align: top;
     };
