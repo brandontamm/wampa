@@ -86,37 +86,4 @@
   .product-item-photo {
     padding-right: $global-padding * 2;
   }
-
-  .product-item-details {
-    margin-top: $global-margin / 2;
-    padding-top: $global-padding;
-
-    .product-item-name {
-      font-size: $global-font-size * 1.25;
-      display: block;
-
-      + .item-options {
-        margin-top: $global-margin / 4;
-      }
-    }
-
-    .item-options {
-
-      dt,
-      dd {
-        float: left;
-      }
-
-      dt {
-        clear: left;
-        margin-bottom: 0;
-
-        &::after {
-          content: ':';
-          margin-right: $global-margin / 2;
-          padding-left: $global-padding / 10;
-        }
-      }
-    }
-  }
 }

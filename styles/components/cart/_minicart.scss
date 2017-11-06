@@ -166,7 +166,12 @@
         > .product {
           display: flex;
 
+          .product-item-pricing {
+            clear: both;
+          }
+
           .details-qty {
+            clear: both;
 
             input {
               width: 30%;
@@ -202,6 +207,30 @@
       > div {
         font-size: $global-font-size * 1.25;
         margin-left: $global-margin / 2;
+      }
+    }
+
+    // Minicart product details toggle element.
+    [aria-selected="false"] {
+      @include icon($position: after, $icon-set: 'fontawesome', $icon: chevron-right) {
+        font-size: $global-font-size * 0.75;
+        margin-left: $global-margin / 4;
+      };
+    }
+    
+    [aria-selected="true"] {
+      @include icon($position: after, $icon-set: 'fontawesome', $icon: chevron-down) {
+        font-size: $global-font-size * 0.75;
+        margin-left: $global-margin / 4;
+      };
+    }
+    
+    [aria-selected="false"],
+    [aria-selected="true"] {
+  
+      &:hover {
+  
+        color: $grey;
       }
     }
   }
