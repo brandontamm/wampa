@@ -17,11 +17,6 @@
 
     .cart-summary {
 
-      @include breakpoint(medium) {
-        padding-left: 0 !important;
-        padding-right: $global-padding * 1.5 !important;
-      }
-
       .summary.title {
         @include header-size(h3);
       }
