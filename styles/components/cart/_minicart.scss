@@ -134,9 +134,13 @@
 
   .subtotal {
     text-align: right;
+    font-weight: bold;
+
+    .price {
+      font-size: $global-font-size * 1.25;
+    }
 
     .label {
-      font-weight: bold;
 
       &::after {
         content: ':';
