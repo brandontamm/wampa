@@ -1,0 +1,37 @@
+//Customer Account Dashboard
+.customer-account-index {
+
+  [class*="dashboard"] {
+
+    .block-title {
+
+      background-color: $grey-light;
+      margin: $global-margin 0;
+      margin-left: $global-margin * -1;
+      padding: $global-padding 0;
+      padding-left: $global-padding;
+    }
+  }
+
+  .block-content {
+
+    .box {
+
+      margin-bottom: $global-margin;
+
+      p {
+
+        margin-bottom: 0;
+      }
+    }
+
+    .box-actions {
+
+      a + a {
+        border-left: 1px solid $grey;
+        margin-left: $global-margin;
+        padding-left: $global-padding;
+      }
+    }
+  }
+}

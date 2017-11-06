@@ -1,0 +1,248 @@
+//Minicart in header
+.minicart-wrapper {
+  float: right;
+  position: relative;
+  margin-left: $global-margin * 2;
+  padding-right: $global-padding;
+  right: $global-padding;
+  top: $global-padding * 2;
+
+  &.active {
+
+    .label {
+      color: darken($grey, 10%);
+      background-color: transparent;
+      padding-left: 0;
+    }
+
+    //Minicart dropdown displayed as dropdown over page content not pushing page content down
+    .block-minicart {
+      display: block;
+      background-color: $white;
+      border: 1px solid $grey;
+      border-radius: 0;
+      color: $grey;
+      padding: $global-padding;
+      margin-left: $global-margin;
+      position: absolute;
+      right: $global-padding;
+      top: $global-padding * 4;
+      width: $global-padding * 20;
+      z-index: 6;
+      box-shadow: 0 0 13px scale-color($black, $alpha: -85%);
+    }
+  }
+
+  .block-content {
+    padding-top: $global-padding * 1.5;
+  }
+
+  .block-title,
+  .subtitle {
+    @include visually-hidden;
+  }
+
+  //Open cart/shopping cart button
+  .showcart {
+
+    outline: none;
+
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: shopping-basket) {
+      display: inline-block;
+      font-size: $global-font-size * 2;
+      line-height: 1;
+      vertical-align: top;
+    };
+
+    //removes default My Cart text
+    > span {
+      display: none;
+    }
+
+    .counter.qty {
+      display: block;
+
+      .counter-label {
+        @include visually-hidden;
+      }
+    }
+
+    // minicart counter indicator
+    .counter-number {
+      position: absolute;
+      right: $global-padding / -2;
+      top: $global-padding / -2;
+      text-align: center;
+      background: $secondary-color;
+      color: $white;
+      font-size: $global-font-size;
+      padding: $global-padding / 2;
+      line-height: 1;
+      border-radius: 100%;
+      min-width: $global-padding * 1.75;
+      height: $global-padding * 1.75;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: color 300ms, background-color 300ms;
+    }
+  }
+
+  //Close button
+  .action.close {
+
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    outline: none;
+
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: close) {
+      vertical-align: top;
+      position: absolute;
+      top: 0;
+      right: $global-padding;
+      font-size: $global-font-size * 1.5;
+      color: $grey;
+    };
+
+    //removes default CLOSE text
+    > span:first-child {
+
+      @include visually-hidden;
+    }
+  }
+
+  // Mini cart top - subtotal and items count
+  .items-total,
+  .subtotal {
+    float: left;
+    width: 50%;
+  }
+
+  .items-total {
+
+    .count {
+      font-weight: bold;
+      font-size: $global-font-size * 1.1;
+    }
+  }
+
+  .subtotal {
+    text-align: right;
+    font-weight: bold;
+
+    .price {
+      font-size: $global-font-size * 1.25;
+    }
+
+    .label {
+
+      &::after {
+        content: ':';
+      }
+    }
+  }
+
+  .actions {
+    clear: both;
+    text-align: center;
+
+    .primary,
+    .secondary {
+      display: inline;
+    }
+  }
+
+  .minicart-items-wrapper {
+    text-align: left;
+    position: relative;
+    height: auto !important;
+
+    ol {
+      list-style: none;
+      margin: $global-margin 0 0;
+      padding-top: $global-padding;
+      border-top: 1px solid $grey;
+
+      li {
+        position: relative;
+        border-bottom: 1px solid $grey;
+        margin: ($global-margin / 2) 0;
+
+        > .product {
+          display: flex;
+
+          .product-item-pricing {
+            clear: both;
+          }
+
+          .details-qty {
+            clear: both;
+
+            input {
+              width: 30%;
+            }
+          }
+        }
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+
+    + .actions {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+      margin-top: $global-margin;
+      padding-top: $global-padding;
+      border-top: 1px solid $grey;
+
+      // a {
+      //   @include button($alt: true);
+      // }
+    }
+
+    .product.actions {
+      position: absolute;
+      right: $global-padding * 4;
+      bottom: $global-padding * 1.2;
+
+      > div {
+        font-size: $global-font-size * 1.25;
+        margin-left: $global-margin / 2;
+      }
+    }
+
+    // Minicart product details toggle element.
+    [aria-selected="false"] {
+      @include icon($position: after, $icon-set: 'fontawesome', $icon: chevron-right) {
+        font-size: $global-font-size * 0.75;
+        margin-left: $global-margin / 4;
+      };
+    }
+    
+    [aria-selected="true"] {
+      @include icon($position: after, $icon-set: 'fontawesome', $icon: chevron-down) {
+        font-size: $global-font-size * 0.75;
+        margin-left: $global-margin / 4;
+      };
+    }
+    
+    [aria-selected="false"],
+    [aria-selected="true"] {
+  
+      &:hover {
+  
+        color: $grey;
+      }
+    }
+  }
+}

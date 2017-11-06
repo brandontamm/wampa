@@ -1,0 +1,396 @@
+////////////////////////////////////////////////////////////////////////////////
+// MIXINS
+// -----------------------------------------------------------------------------
+
+//////////////////
+//typography
+/////////////////
+@mixin header-size($type) {
+  @include breakpoint(medium) {
+    font-size: rem-calc(map-get(map-get($header-sizes, 'medium'), $type) * 1px);
+  }
+
+  font-size: rem-calc(map-get(map-get($header-sizes, 'small'), $type) * 1px);
+}
+
+//////////////////
+//button base styles
+//////////////////
+@mixin button-base {
+  display: inline-block;
+  font-size: rem-calc(16);
+  white-space: nowrap;
+  font-weight: 700;
+  font-family: $body-font-family;
+  line-height: $global-lineheight;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $secondary-color;
+  color: $white;
+  border: 1px solid $secondary-color;
+  padding: ($global-padding * 0.625) ($global-padding * 1.5625);
+  margin: 0;
+  cursor: pointer;
+  transition: background-color 200ms, border 200ms, color 200ms;
+
+  &:visited,
+  &:active,
+  &:focus {
+    color: $white;
+  }
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+    border-color: darken($secondary-color, 10%);
+    color: $white;
+  }
+}
+
+//////////////////
+//button - 4 style combinations
+@mixin button($outline: false, $reverse: false, $large: false, $alt: false) {
+  @include button-base;
+
+  @if $large == true {
+    font-size: rem-calc(15);
+    padding: ($button-padding * 0.75) ($button-padding * 2.25);
+  }
+
+  @if $outline == true {
+    background-color: transparent;
+    color: $primary-color;
+
+    &:visited,
+    &:active,
+    &:focus {
+      color: darken($primary-color, 15%);
+    }
+
+    &:hover {
+      background-color: darken($primary-color, 15%);
+      color: $white;
+    }
+  }
+
+  @if $reverse == true {
+    background-image: none;
+    border-color: $primary-color;
+    border-radius: 0;
+    background-color: $primary-color;
+    color: $white;
+
+    &:visited,
+    &:active,
+    &:focus {
+      color: $white;
+    }
+
+    &:hover {
+      background-image: none;
+      background-color: darken($secondary-color, 10%);
+      border-color: darken($secondary-color, 10%);
+    }
+
+    @if $outline == true {
+      background-color: transparent;
+      color: $white;
+      border: 1px solid rgba($white, 0.5);
+
+      &:visited,
+      &:active,
+      &:focus {
+        color: $white;
+      }
+
+      &:hover {
+        background-color: $blue-light;
+        border-color: rgba($blue-light, 0.6);
+        color: $white;
+      }
+    }
+  }
+
+  @if $alt == true {
+    background-image: none;
+    border-color: transparent;
+    border-radius: 0;
+    background-color: transparent;
+    color: $secondary-color;
+    text-transform: none;
+
+    &:visited,
+    &:active,
+    &:focus {
+      color: $secondary-color;
+    }
+
+    &:hover {
+      background-image: none;
+      color: $primary-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  @content;
+}
+
+//////////////////////
+// Gradient
+//////////////////////
+@mixin linear-gradient($color1, $color2, $direction) {
+  background-color: $color1;
+  background: linear-gradient(to $direction, $color1 0%, $color2 100%);
+}
+
+@mixin radial-gradient($center, $edge) {
+  background-color: $edge;
+  background: radial-gradient(ellipse at center, $center 0%, $edge 75%);
+}
+
+//////////////////////
+// overlay psuedo element
+//////////////////////
+@mixin overlay($color, $after: false) {
+
+  @if $after == false {
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color, 0.66);
+      z-index: 1;
+    }
+  }
+
+  @if $after == true {
+    &::after {
+      display: block;
+      position: absolute;
+      top: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color, 0.66);
+      z-index: 1;
+    }
+  }
+}
+
+//////////////////////
+// Content Spacing
+//////////////////////
+@mixin content-margin-gap($side: false) {
+  @include content-margin-gap-top();
+  @include content-margin-gap-bottom();
+
+  @include breakpoint(medium) {
+    @if $side {
+      margin-left: $global-margin / 2;
+      margin-right: $global-margin / 2;
+    }
+  }
+}
+
+@mixin content-margin-gap-top() {
+  margin-top: $global-margin * 3;
+
+  @include breakpoint(medium) {
+    margin-top: $global-margin * 5;
+  }
+}
+
+@mixin content-margin-gap-bottom() {
+  margin-bottom: $global-margin * 3;
+
+  @include breakpoint(medium) {
+    margin-bottom: $global-margin * 5;
+  }
+}
+
+@mixin content-padding-gap($side: false) {
+  padding-top: $global-padding * 3.5;
+  padding-bottom: $global-padding * 3.5;
+
+  @include breakpoint(medium) {
+    padding-top: $global-padding * 5;
+    padding-bottom: $global-padding * 5;
+
+    @if $side {
+      padding-left: $global-padding / 2;
+      padding-right: $global-padding / 2;
+    }
+  }
+}
+
+//////////////////////
+// fontawesome icon
+//////////////////////
+@mixin icon($position: before, $icon: false, $icon-set: fontawesome, $styles: true) {
+  @if $position == both {
+    $position: 'before, &:after';
+  }
+  // Either a :before or :after pseudo-element, or both, defaulting to :before
+  &:#{$position} {
+    @if $icon {
+      // A particular icon has been specified
+      content: "#{map-get($icons, $icon)}";
+    }
+    @if $styles {
+      // Supportive icon styles required
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      font-family: $icon-set;
+      transition: color 300ms ease;
+    }
+    // Include any extra rules supplied for the pseudo-element
+    @content;
+  }
+}
+// f=fontawesome icons
+// e=material
+// icon font codes
+$icons: (
+  facebook: '\f09a',
+  twitter: '\f099',
+  linkedin: '\f0e1',
+  googleplus: '\f0d5',
+  pinterest: '\f231',
+  instagram: '\f16d',
+  search: '\f002',
+  plus: '\f067',
+  minus: '\f068',
+  close: '\f00d',
+  arrow-left: '\e314',
+  arrow-right: '\f061',
+  arrow-up: '\f062',
+  arrow-down: '\f063',
+  pdf: '\f1c1',
+  add-file: '\f093',
+  lock: '\f023',
+  edit: '\f044',
+  delete: '\f1f8',
+  revisions: '\f01e',
+  active: '\f06e',
+  devel: '\f121',
+  menu: '\f0c9',
+  angle-left: '\f104',
+  more: '\f105',
+  less: '\f107',
+  chevron-down: '\f078',
+  chevron-up: '\f077',
+  chevron-right: '\f054',
+  chevron-left: '\f053',
+  tag: '\f02b',
+  folder: '\f07b',
+  file: '\f15b',
+  info: '\f05a',
+  shopping-cart: '\f07a',
+  shopping-bag: '\f290',
+  shopping-basket: '\f291',
+  print: '\f02f',
+  check: '\f00c',
+  star: '\f005',
+  star-half: '\f123',
+  basket: '\e14d',
+  email: '\f003',
+  pencil: '\f040',
+  compare: '\f14a',
+  heart: '\f004',
+  user: '\f007',
+  grid: '\f00a',
+  list: '\f00b',
+  user-add: '\f234',
+  check-circle: '\f058',
+);
+
+/////////////////////
+// CSS Triangle
+// Creates a CSS triangle, which can be used for dropdown arrows, dropdown pips, and more.
+// ---------
+@mixin css-triangle($size, $color, $direction, $position) {
+
+  @if ($position == before) {
+
+    &::before {
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset $size;
+      content: '';
+
+      @if ($direction == down) {
+        border-bottom-width: 0;
+        border-top-style: solid;
+        border-color: $color transparent transparent;
+      }
+      @if ($direction == up) {
+        border-top-width: 0;
+        border-bottom-style: solid;
+        border-color: transparent transparent $color;
+      }
+      @if ($direction == right) {
+        border-right-width: 0;
+        border-left-style: solid;
+        border-color: transparent transparent transparent $color;
+      }
+      @if ($direction == left) {
+        border-left-width: 0;
+        border-right-style: solid;
+        border-color: transparent $color transparent transparent;
+      }
+
+      @content;
+    }
+  }
+
+  @if ($position == after) {
+
+    &::after {
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset $size;
+      content: '';
+
+      @if ($direction == down) {
+        border-bottom-width: 0;
+        border-top-style: solid;
+        border-color: $color transparent transparent;
+      }
+      @if ($direction == up) {
+        border-top-width: 0;
+        border-bottom-style: solid;
+        border-color: transparent transparent $color;
+      }
+      @if ($direction == right) {
+        border-right-width: 0;
+        border-left-style: solid;
+        border-color: transparent transparent transparent $color;
+      }
+      @if ($direction == left) {
+        border-left-width: 0;
+        border-right-style: solid;
+        border-color: transparent $color transparent transparent;
+      }
+
+      @content;
+    }
+  }
+}
+
+// Visually hidden
+@mixin visually-hidden($focusable: false) {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}

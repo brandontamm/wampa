@@ -1,16 +1,25 @@
 {
-    "name": "aai/theme-frontend-wampa",
-    "description": "Magento + Foundation + SASS + Gulp",
-    "require": {
-        "php": "~5.6.0|~7.0.0",
-        "magento/theme-frontend-blank": "100.0.*",
-        "magento/framework": "100.0.*"
-    },
+    "name": "augustash/theme-frontend-wampa",
+    "description": "Magento base theme for August Ash projects based on Snowdog-blank-sass",
+    "version": "0.2.5",
+    "license": "MIT",
     "type": "magento2-theme",
-    "version": "100.0.1",
-    "license": [
-        "OSL-3.0",
-        "AFL-3.0"
+    "require": {
+        "magento/framework": "100.1.*",
+        "snowdog/theme-blank-sass": "~0.10.1",
+        "snowdog/frontools": "dev-feature/sass-min-nomaps",
+        "zurb/foundation": "~6.3.1",
+        "php": "~5.6.0|~7.0.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.augustash.com/repo/private/"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/augustash/magento2-frontools.git"
+        }
     ],
     "autoload": {
         "files": [

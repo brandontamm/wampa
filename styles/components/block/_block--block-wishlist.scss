@@ -1,0 +1,45 @@
+
+.block.block-wishlist {
+  @include content-margin-gap-bottom;
+
+  .block-title {
+    font-size: $global-font-size * 1.4;
+
+    strong {
+      font-weight: 300;
+    }
+
+    .counter {
+      font-size: $global-font-size * 0.75;
+      color: $grey;
+      margin-left: $global-margin;
+    }
+  }
+
+  .subtitle {
+    @include visually-hidden;
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: $global-margin / 2;
+      position: relative;
+      padding-left: $global-padding * 1.25;
+
+      .delete {
+        @include icon($position: before, $icon-set: fontawesome, $icon: close);
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        > span {
+          @include visually-hidden;
+        }
+      }
+    }
+  }
+}

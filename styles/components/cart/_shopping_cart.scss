@@ -1,0 +1,88 @@
+//Shopping cart and shopping cart modal on checkout page
+.cart-container,
+.items-in-cart {
+
+  .cart-summary {
+    @include grid-column;
+
+    @include breakpoint(medium) {
+      @include grid-column(3);
+      @include grid-column-position(9);
+      padding-left: $global-padding * 1.5 !important;
+      padding-right: 0 !important;
+    }
+  } 
+
+  .form-cart {
+    @include grid-column;
+
+    @include breakpoint(medium) {
+      @include grid-column(9);
+      @include grid-column-position(-3);
+    }
+  }
+
+  [aria-selected="false"] {
+
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: chevron-right) {
+      margin: $global-margin;
+      vertical-align: top;
+    };
+  }
+
+  [aria-selected="true"] {
+
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: chevron-down) {
+      margin: $global-margin;
+      vertical-align: top;
+    };
+  }
+
+  [aria-selected="false"],
+  [aria-selected="true"] {
+
+    &:hover {
+
+      color: $grey;
+    }
+  }
+
+  ul {
+
+    list-style: none;
+    margin-top: $global-margin;
+  }
+
+  .checkout {
+    margin-left: 0;
+  }
+
+  .continue {
+
+    @extend %button;
+    @include button-style;
+  }
+
+  //Gift message settings - closed by default and clicking "Gift Options" link opens Gift form with class _active.
+  .gift-content {
+
+    visibility: hidden;
+    height: 0;
+
+    &._active {
+
+      visibility: visible;
+      height: auto;
+    }
+  }
+
+  table {
+
+    .label {
+
+      color: $black;
+      font-size: $global-font-size;
+      padding-left: 0;
+    }
+  }
+}

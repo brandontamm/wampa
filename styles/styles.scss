@@ -1,0 +1,98 @@
+// Make sure the charset is set appropriately
+@charset 'UTF-8';
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Vendor
+// -----------------------------------------------------------------------------
+// Here we load vendor utilities. Bourbon and Foundation 6 are core. You can
+// selectively load foundation components but by default everything is loaded.
+// We load our variables and custom foundation (found in utils/) before we
+// load in the Foundation componenets so we can override them.
+
+@import '../../../vendor/zurb/foundation/scss/foundation';
+@import 'utils/breakpoints';
+@import 'utils/variables';
+@import 'base/foundation_components';
+
+////////////////////////////////////////////////////////////////////////////////
+// Utilities
+// -----------------------------------------------------------------------------
+// The utils/ folder gathers all Sass tools and helpers we’ll use across the
+// project. Got a function? A mixin? Put it in there.
+
+@import 'utils/mixins';
+@import 'utils/placeholders';
+
+
+////////////////////////////////////////////////////////////////////////////////
+// BASE
+// -----------------------------------------------------------------------------
+// The base/ folder holds what we might call the boilerplate stuff for your
+// project. In there, you might find some stuff dealing with typography, and,
+// depending on the project, maybe some other files.
+
+@import 'base/typography';
+@import 'base/status_messages';
+
+
+////////////////////////////////////////////////////////////////////////////////
+// LAYOUT
+// -----------------------------------------------------------------------------
+// The layout/ directory usually contains a number of files, each of them
+// setting some styles for the main sections of the layout (header, footer, and
+// so on). It also contains the _grid file which is the grid system used to
+// build the layout.
+
+@import 'layout/global';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/copyright';
+@import 'layout/modals';
+
+
+////////////////////////////////////////////////////////////////////////////////
+// COMPONENT
+// -----------------------------------------------------------------------------
+// For smaller components, there is the components/ folder. While layout/ is
+// kind of macro (defining the global wireframe), components/ is more micro. It
+// can contain all kinds of specific modules like a slider, a loader, a widget,
+// or anything along those lines. There are usually a lot of files in
+// components/ since your site should be mostly composed of tiny modules.
+
+@import 'components/navigation/nav--main';
+@import 'components/navigation/nav--toggle';
+@import 'components/navigation/breadcrumbs';
+@import 'components/navigation/nav--sections';
+@import 'components/block/block_search';
+@import 'components/block/block_search_autocomplete';
+@import 'components/block/block--filter';
+@import 'components/block/block--block-compare';
+@import 'components/block/block--block-wishlist';
+@import 'components/block/block--block-reorder';
+@import 'components/forms';
+@import 'components/buttons';
+@import 'components/login';
+@import 'components/tables';
+@import 'components/products/product_grid';
+@import 'components/products/product_list';
+@import 'components/products/product_view';
+@import 'components/products/product_category_view';
+@import 'components/products/product_toolbar';
+@import 'components/products/product_comparison';
+@import 'components/products/product_actions';
+@import 'components/products/product_addtocart';
+@import 'components/products/product--details';
+@import 'components/products/product--swatches';
+@import 'components/cart/shopping_cart';
+@import 'components/cart/minicart';
+@import 'components/cart/cart--table-wrapper';
+@import 'components/account/account_dashboard';
+@import 'components/account/account_orders';
+@import 'components/account/account_addresses';
+@import 'components/account/account_nav';
+@import 'components/checkout';
+@import 'components/checkout--cart';
+@import 'components/gallery';
+@import 'components/rating';
+@import 'components/messages';

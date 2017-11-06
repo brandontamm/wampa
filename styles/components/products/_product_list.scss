@@ -1,0 +1,43 @@
+//Product list search results
+.list.products-list {
+  @include grid-row;
+  margin-bottom: $global-margin * 2;
+  padding-bottom: $global-padding;
+  background-color: $white;
+  padding-left: $global-padding;
+  padding-right: $global-padding;
+
+  ol {
+    list-style: none;
+  }
+
+  .product-items {
+    margin-left: 0;
+
+    li:not(:last-child) {
+      padding-bottom: $global-padding;
+      border-bottom: 1px solid rgba($secondary-color, 0.2);
+    }
+
+    .product-item-info {
+      @include grid-row;
+
+      .product-item-photo {
+        @include grid-column(3);
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      .product-item-details {
+        @include grid-column(8);
+        padding-left: 0 !important;
+        padding-top: $global-padding * 2;
+      }
+    }
+
+    .product-item-actions {
+      margin-top: $global-margin;
+      margin-bottom: $global-margin;
+    }
+  }
+}

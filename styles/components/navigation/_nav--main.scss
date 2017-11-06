@@ -1,0 +1,153 @@
+// Main navigation styling
+.nav-sections-item-content {
+  width: 100%;
+  position: relative;
+  background-color: rgba($grey, 0.1);
+
+  .navigation {
+    @include grid-row;
+    font-weight: 700;
+    height: inherit;
+    overflow: inherit;
+    z-index: 3;
+  
+    ul {
+      width: auto;
+      padding-left: $global-padding * 1.875;
+      padding-right: $global-padding * 1.875;
+      margin-bottom: 0;
+      list-style: none;
+      position: relative;
+    }
+  
+    .level0 {
+      margin: 0 ($global-padding) 0 0;
+      display: inline-block;
+      position: relative;
+
+      &:last-child {
+        margin-right: 0;
+        padding-right: 0;
+      }
+
+      &.active,
+      &.has-active {
+
+        > .level-top {
+          border-color: $red;
+          border-style: solid;
+          border-width: 0 0 3px;
+          color: $grey-dark;
+          text-decoration: none;
+          display: inline-block;
+        }
+      }
+
+      &.parent:hover {
+
+        > .submenu {
+          overflow: visible !important;
+        }
+      }
+  
+      > a {
+        color: $grey;
+        line-height: $global-padding * 3;
+        padding: 0 $global-padding;
+        text-decoration: none;
+        box-sizing: border-box;
+        position: relative;
+
+        &:hover,
+        &.ui-state-focus {
+          color: $grey-dark;
+          text-decoration: none;
+        }
+      }
+
+      .submenu {
+        background: $white;
+        border: 1px solid $grey-light;
+        box-shadow: 0 5px 5px rgba($black, 0.19);
+        font-weight: 400;
+        min-width: rem-calc(230);
+        padding: $global-padding 0;
+        display: none;
+        left: 0;
+        margin: 0 !important;
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+        margin-top: $global-margin * 0.75;
+
+        > ul {
+          margin-top: $global-margin * 0.75;
+
+          &::before,
+          &::after {
+            content: '';
+            display: block;
+            overflow: hidden;
+            position: absolute;
+          }
+
+          &::before {
+            color: $white;
+            left: $global-padding * 1.2;
+            top: $global-padding * -1.2;
+            border: 10px solid transparent;
+            height: 0;
+            width: 0;
+            border-bottom-color: $white;
+            z-index: 4;
+          }
+
+          &::after {
+            border: 11px solid transparent;
+            height: 0;
+            width: 0;
+            border-bottom-color: $grey-light;
+            color: $grey-light;
+            left: $global-padding * 1.2;
+            top: $global-padding * -1.2;
+            z-index: 3;
+          }
+        }
+
+        a {
+          display: block;
+          line-height: inherit;
+          color: $grey-dark;
+          padding: ($global-padding / 2) ($global-padding * 1.5);
+
+          &:hover,
+          &.ui-state-focus {
+            background: $grey-light;
+            color: $grey-dark;
+            text-decoration: none;
+          }
+        }
+
+        &.active {
+
+          > a {
+            border-color: $red;
+            border-style: solid;
+            border-width: 0 0 0 3px;
+            color: $grey-dark;
+          }
+        }
+
+        .submenu {
+          top: 0 !important;
+          left: 100% !important;
+        }
+
+        .submenu-reverse {
+          left: auto !important;
+          right: 100%;
+        }
+      }
+    }
+  }
+}

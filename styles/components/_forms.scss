@@ -1,0 +1,111 @@
+//Default form styling
+[type=text],
+[type=text]:focus,
+[type=password],
+[type=password]:focus,
+[type=date],
+[type=date]:focus,
+[type=datetime],
+[type=datetime]:focus,
+[type=datetime-local],
+[type=datetime-local]:focus,
+[type=month],
+[type=month]:focus,
+[type=week],
+[type=week]:focus,
+[type=email],
+[type=email]:focus,
+[type=number],
+[type=number]:focus,
+[type=search],
+[type=search]:focus,
+[type=tel],
+[type=tel]:focus,
+[type=time],
+[type=time]:focus,
+[type=url],
+[type=url]:focus,
+[type=color],
+[type=color]:focus,
+input,
+input:focus,
+textarea,
+textarea:focus,
+select,
+select:focus {
+
+  background-color: $grey-light;
+  border: 1px solid darken($grey-light, 5%);
+  border-radius: $global-radius;
+  color: $grey;
+  line-height: $global-padding;
+}
+
+select {
+
+  &:disabled {
+    background-color: scale-color($secondary-color, $alpha: -85%);
+  }
+}
+
+[type=checkbox],
+[type=radio],
+.field [type=checkbox],
+.field [type=radio] {
+
+  display: inline;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+fieldset,
+.fieldset {
+  background-color: $white;
+  border: 0;
+
+  legend {
+    margin: 0;
+    margin-left: $global-margin * -0.1875;
+    padding: ($global-padding / 2) ($global-padding * 0.1875) 0;
+    background: transparent;
+    height: 0;
+    margin-bottom: $global-margin / 2;
+
+    > span {
+      display: block;
+      margin-top: $global-margin;
+    }
+  }
+}
+
+label {
+
+  &.label {
+    color: darken($grey, 10%);
+    background-color: transparent;
+    padding-left: 0;
+  }
+}
+
+//required asterisk on forms
+.required,
+._required {
+
+  > .label {
+
+    span {
+
+      &::after {
+        content: '*';
+        color: $secondary-color;
+        margin-left: $global-margin / 6;
+      }
+    }
+  }
+}
+
+// Mage error warning
+.mage-error {
+  color: scale-color(map-get($foundation-palette, alert), $alpha: -40%);
+}

@@ -1,0 +1,114 @@
+//Product Action Icons - Edit or remove actions using icons in place of text links.
+
+//Edit and Remove Item buttons/links turned to icons.
+// -delete and -edit are from main cart with .delete and .edit from minicart
+
+.product-item-actions,
+.product.actions,
+.item-actions {
+
+  .action.delete,
+  .action.edit,
+  .action-delete,
+  .action-edit,
+  .action.towishlist,
+  .action-towishlist,
+  .action-gift,
+  .action.gift,
+  .action.tocompare,
+  .action-tocompare {
+
+    display: inline-block;
+
+    &:hover {
+      color: $red;
+    }
+
+    span {
+      @include visually-hidden; //removes default edit and remove text block
+    }
+  }
+
+  //edit item in cart icon
+  .action.edit,
+  .action-edit {
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: edit) {
+      display: inline-block;
+    };
+  }
+
+  //delete / remove item from cart icon
+  .action.delete,
+  .action-delete {
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: delete) {
+      display: inline-block;
+    };
+  }
+
+  // add heart icon for add to wishlist
+  .action.towishlist,
+  .action-towishlist {
+    @include icon($position: before, $icon: heart, $icon-set: 'fontawesome') {
+      display: inline-block;
+    };
+  }
+
+  // add compare icon to compare
+  .action.tocompare,
+  .action-tocompare {
+    @include icon($position: before, $icon: list, $icon-set: 'fontawesome') {
+      display: inline-block;
+    };
+  }
+
+  // gift options in cart icon
+  .action.gift,
+  .action-gift {
+    @include icon($position: before, $icon-set: 'fontawesome', $icon: fa-gift) {
+      display: inline-block;
+    };
+    float: right;
+  }
+}
+
+// Pagination Actions
+.pages {
+
+  .action {
+    
+    &.previous {
+      @include icon($position: before, $icon-set: fontawesome, $icon: angle-left) {
+        font-weight: bold;
+      };
+
+      span {
+        display: none;
+      }
+    }
+
+    &.next {
+      @include icon($position: before, $icon-set: fontawesome, $icon: more){
+        font-weight: bold;
+      };
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+// product review actions
+.reviews-actions {
+
+  .action.view {
+    margin-right: $global-margin * 1.5;
+  }
+}
+
+//Add printer icon for "Print This Page" link
+.action.print {
+  @include icon($position: before, $icon-set: 'fontawesome', $icon: print) {
+    display: inline-block;
+  };
+}
