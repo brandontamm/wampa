@@ -1,0 +1,26 @@
+// Slideout nav
+
+//Nav toggle button
+.nav-toggle {
+  
+  @include breakpoint(medium) {
+    display: none;
+  }
+
+  @include icon($position: before, $icon-set: 'fontawesome', $icon: menu) {
+    font-size: $global-font-size * 2;
+    line-height: inherit;
+    color: $grey;
+    cursor: pointer;
+  };
+
+  > span {
+    font-size: 0;
+  }
+}
+
+.nav-sections-item-title {
+  display: none;
+}
+  
+  
