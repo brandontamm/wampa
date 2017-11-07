@@ -60,16 +60,14 @@
 // or anything along those lines. There are usually a lot of files in
 // components/ since your site should be mostly composed of tiny modules.
 
-@import 'components/navigation/nav--main';
-@import 'components/navigation/nav--toggle';
-@import 'components/navigation/breadcrumbs';
-@import 'components/navigation/nav--sections';
-@import 'components/block/block_search';
-@import 'components/block/block_search_autocomplete';
-@import 'components/block/block--filter';
-@import 'components/block/block--block-compare';
-@import 'components/block/block--block-wishlist';
-@import 'components/block/block--block-reorder';
+@import 'components/nav';
+@import 'components/breadcrumbs';
+@import 'components/block_search';
+@import 'components/block_search_autocomplete';
+@import 'components/block--filter';
+@import 'components/block--block-compare';
+@import 'components/block--block-wishlist';
+@import 'components/block--block-reorder';
 @import 'components/forms';
 @import 'components/buttons';
 @import 'components/login';
