@@ -66,6 +66,12 @@
         @include breakpoint(medium) {
           float: right;
         }
+
+        a {
+          @include button($alt: true) {
+            font-weight: normal;
+          };
+        }
       }
 
       .primary a {
