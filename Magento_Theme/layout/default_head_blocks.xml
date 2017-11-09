@@ -9,6 +9,7 @@
     <head>
         <!-- Add Theme JS -->
         <script src="js/main.js" />
+        <!-- <script src="js/toggle.js" /> -->
 
         <css src="css/styles.css"/>
         

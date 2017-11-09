@@ -4,5 +4,13 @@ var config = {
   deps: [
     "js/toggle",
   ],
+  paths: {
+    "toggle": "js/toggle"
+  },
+  shim: {
+      "toggle": {
+          "deps": ["jquery", "jquery/ui", "domReady"]
+      }
+  }
 
 };

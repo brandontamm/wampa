@@ -144,4 +144,73 @@
       }
     }
   }
+
+  // Checkout and cart sidebar wrapper
+  .opc-sidebar {
+    @include grid-column(12);
+    display: block;
+    background-color: $white;
+    margin-top: $global-margin * 2;
+
+    @include breakpoint(medium) {
+      @include grid-column(4);
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+
+    > .modal-inner-wrap {
+
+      .modal-content {
+
+        .title {
+          color: $secondary-color;
+          font-size: $global-font-size * 1.25;
+          padding: ($global-padding) ($global-padding * 1.5);
+          font-weight: 700;
+          text-transform: uppercase;
+          background-color: scale-color($secondary-color, $alpha: -80%);
+          margin-bottom: $global-margin * 2;
+        }
+      }
+
+      .modal-header {
+
+        .action-close {
+          display: none;
+        }
+      }
+
+      .table-caption {
+        padding-left: $global-padding * 0.625;
+        display: none;
+      }
+    }
+
+    .shipping-information {
+
+      > div {
+        padding: $global-padding 0;
+
+        &:not(:last-of-type) {
+          border-bottom: 1px solid $grey-light;
+        }
+      }
+
+      .shipping-information-title {
+        font-weight: bold;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+    }
+
+    button {
+      
+      &.action-edit {
+        @include button($alt: true) {
+          text-transform: capitalize;
+        };
+      }
+    }
+  }
 }
