@@ -22,7 +22,7 @@
   
     > div,
     > a {
-      padding: 0 ($global-padding / 2);
+      padding: 0 ($global-padding / 2) ($global-padding * 1.25);
     }
   
     .color {

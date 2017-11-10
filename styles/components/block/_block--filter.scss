@@ -121,16 +121,8 @@
       padding: ($global-padding * 0.75) ($global-padding * 2) ($global-padding * 0.75) ($global-padding / 4);
     }
 
-    + .filter-options-content {
-      display: none;
-    }
-
-    &.open {
+    &[aria-selected="true"] {
       @include icon($position: after, $icon-set: fontawesome, $icon: less);
-
-      + .filter-options-content {
-        display: block;
-      }
     }
   }
 
