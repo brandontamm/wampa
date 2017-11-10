@@ -22,3 +22,37 @@
     border-radius: $global-radius;
   }
 }
+
+
+// Global Alerts
+.global.message {
+  
+  &.demo {
+    background-color: map-get($foundation-palette, alert);
+    color: $white;
+    padding: $global-padding;
+    text-align: center;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &.success {
+    background-color: map-get($foundation-palette, success);
+    padding: $global-padding;
+    border-radius: $global-radius;
+  }
+
+  &.error {
+    background-color: map-get($foundation-palette, alert);
+    padding: $global-padding;
+    border-radius: $global-radius;
+  }
+
+  &.alert {
+    background: map-get($foundation-palette, warning);
+    padding: $global-padding;
+    border-radius: $global-radius;
+  }
+}
