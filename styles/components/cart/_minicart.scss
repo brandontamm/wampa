@@ -38,7 +38,7 @@
   }
 
   .block-title,
-  .subtitle {
+  .subtitle:not(.empty) {
     @include visually-hidden;
   }
 
@@ -63,7 +63,7 @@
       display: block;
 
       .counter-label {
-        @include visually-hidden;
+        display: none;
       }
     }
 
