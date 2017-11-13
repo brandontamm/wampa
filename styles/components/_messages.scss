@@ -1,3 +1,24 @@
+.message.notice {
+  @include grid-column;
+}
+
+.page.messages {
+  color: $white;
+  padding: 0 ($global-padding * 2);
+}
+
+// Account messages
+.account {
+
+  .message.info {
+    background-color: rgba(map-get($foundation-palette, alert), 0.1);
+    color: $secondary-color;
+    margin-bottom: $global-margin;
+    padding: $global-padding;
+    clear: both;
+  }
+}
+
 // Password Strength Meter
 .password-strength-meter,
 .password-strength-meter-0 {
@@ -20,5 +41,17 @@
 
   span {
     color: map-get($foundation-palette, success);
+  }
+}
+
+.message.global.demo {
+  background: map-get($foundation-palette, alert);
+  color: $white;
+  padding: $global-padding;
+  text-align: center;  
+
+  p {
+    font-size: $global-font-size * 1.25;
+    font-weight: bold;
   }
 }
