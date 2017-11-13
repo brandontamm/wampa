@@ -20,15 +20,28 @@
     li {
       @include grid-row;
       margin-top: $global-margin * 2;
+
+      &:not(:last-of-type) {
+
+        @include breakpoint(small only) {
+          border-bottom: 1px solid $grey-light;
+          padding-bottom: $global-padding * 2;
+        }
+      }
     }
   }
 
   .left {
     @include breakpoint(small only) {
       float: none;
+      margin-bottom: $global-margin / 2;
     }
 
-    @include grid-column(3);
+    @include grid-column(12);
+
+    @include breakpoint(medium) {
+      @include grid-column(3);
+    }
 
     .rating-result,
     .review-author,
@@ -43,7 +56,11 @@
   }
 
   .right {
-    @include grid-column(9);
+    @include grid-column(12);
+
+    @include breakpoint(medium) {
+      @include grid-column(9);
+    }
 
     .review-title {
       @include header-size(h4);
