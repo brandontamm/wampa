@@ -34,6 +34,27 @@ main {
   padding: 0;
 }
 
+// Mobile Navigation slide
+.nav-before-open {
+
+  .page-wrapper {
+    transition: left 300ms ease;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &.nav-open {
+
+    .page-wrapper {
+      position: relative;
+      left: 80%;
+      left: calc(100% - 3rem);
+    }
+  }
+}
+
 .page-layout-1column:not(.catalog-product-view):not(.customer-account-create),
 .page-layout-checkout,
 .cms-no-route {

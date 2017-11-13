@@ -1,4 +1,25 @@
 
+// Mobile Navigation slide
+.nav-before-open {
+  
+  .page-wrapper {
+    transition: left 300ms ease;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &.nav-open {
+
+    .page-wrapper {
+      position: relative;
+      left: 80%;
+      left: calc(100% - 3rem);
+    }
+  }
+}
+
 .nav-sections {
   
   @include breakpoint(small only) {
@@ -19,7 +40,7 @@
       box-shadow: 0 0 5px 0 rgba($black, 0.75);
       left: 0;
       z-index: 99;
+      background-color: $white;
     }
   }
 }
-  
