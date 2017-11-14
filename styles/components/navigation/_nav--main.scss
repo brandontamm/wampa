@@ -2,7 +2,10 @@
 .nav-sections-item-content {
   width: 100%;
   position: relative;
-  background-color: rgba($grey, 0.1);
+
+  @include breakpoint(medium) {
+    background-color: rgba($grey, 0.1);
+  }
 
   .navigation {
     @include grid-row;
@@ -22,8 +25,12 @@
   
     .level0 {
       margin: 0 ($global-padding) 0 0;
-      display: inline-block;
       position: relative;
+      display: block;
+
+      @include breakpoint(medium) {
+        display: inline-block;
+      }
 
       &:last-child {
         margin-right: 0;

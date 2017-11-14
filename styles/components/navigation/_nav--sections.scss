@@ -6,7 +6,7 @@
     transition: left 300ms ease;
     height: 100%;
     left: 0;
-    overflow: hidden;
+    overflow: hidden !important;
     position: relative;
   }
 
