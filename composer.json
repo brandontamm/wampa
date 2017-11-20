@@ -5,10 +5,10 @@
     "license": "MIT",
     "type": "magento2-theme",
     "require": {
-        "magento/framework": "100.1.*",
-        "snowdog/theme-blank-sass": "~0.10.1",
+        "magento/framework": "101.0.*",
+        "snowdog/theme-blank-sass": "~1.0.2",
         "snowdog/frontools": "dev-feature/sass-min-nomaps",
-        "zurb/foundation": "~6.3.1",
+        "zurb/foundation": "6.3.1",
         "php": "~5.6.0|~7.0.0"
     },
     "repositories": [
