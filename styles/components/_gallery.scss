@@ -164,6 +164,24 @@
   }
 }
 
+.video-thumb-icon {
+  position: relative;
+
+  &::after {
+    background: url('../images/gallery-sprite.png') bottom right;
+    bottom: 0;
+    content: '';
+    height: 100px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: -5px;
+    top: 0;
+    width: 100px;
+  }
+}
+
+
 .product-video {
   bottom: 0;
   height: 75%;
