@@ -1,11 +1,11 @@
 {
     "name": "augustash/theme-frontend-wampa",
     "description": "Magento base theme for August Ash projects based on Snowdog-blank-sass",
-    "version": "0.2.5",
+    "version": "0.3.0",
     "license": "MIT",
     "type": "magento2-theme",
     "require": {
-        "snowdog/theme-blank-sass": "~0.10.1",
+        "snowdog/theme-blank-sass": "dev-cloned-0.10.1",
         "snowdog/frontools": "dev-feature/sass-min-nomaps",
         "zurb/foundation": "6.3.1",
         "php": "~5.6.0|~7.0.0|~7.1.0"
@@ -18,6 +18,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/augustash/magento2-frontools.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/augustash/magento2-theme-blank-sass.git"
         }
     ],
     "autoload": {
