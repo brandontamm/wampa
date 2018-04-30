@@ -5,7 +5,6 @@
     "license": "MIT",
     "type": "magento2-theme",
     "require": {
-        "magento/framework": "100.1.*",
         "snowdog/theme-blank-sass": "~0.10.1",
         "snowdog/frontools": "dev-feature/sass-min-nomaps",
         "zurb/foundation": "~6.3.1",
