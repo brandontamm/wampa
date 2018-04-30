@@ -24,7 +24,8 @@
             "url": "https://github.com/augustash/magento2-theme-blank-sass.git"
         }
     ],
-    "minimum-stability": "alpha",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "files": [
             "registration.php"
