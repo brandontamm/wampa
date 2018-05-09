@@ -45,14 +45,14 @@
     .value-button {
       font-size: rem-calc(15);
       display: inline-block;
-      border: 1px solid $grey-light;
+      border: 1px solid $grey;
       margin: 0 0 0 ($global-margin / -5);
       width: $global-padding * 3;
       height: $global-padding * 2.2;
       text-align: center;
       vertical-align: middle;
       padding: ($global-padding / 4) 0;
-      background: $grey-lighter;
+      background: $grey;
       user-select: none;
       transition: color 400ms ease, background-color 400ms ease, border 400ms ease;
 
