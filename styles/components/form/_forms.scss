@@ -33,12 +33,20 @@ textarea,
 textarea:focus,
 select,
 select:focus {
-
   background-color: $grey-light;
   border: 1px solid darken($grey-light, 5%);
   border-radius: $global-radius;
   color: $grey;
   line-height: $global-padding;
+}
+
+// This will remove the lovely dropdown arrows added by default and use the foundation option.
+.select,
+select {
+  // background-image: none;
+  -webkit-appearance: none; // sass-lint:disable-line no-vendor-prefixes
+  -moz-appearance: none; // sass-lint:disable-line no-vendor-prefixes
+  appearance: none;
 }
 
 select {
@@ -83,12 +91,13 @@ label {
 
   &.label {
     color: darken($grey, 10%);
+    font-weight: bold;
     background-color: transparent;
     padding-left: 0;
   }
 }
 
-//required asterisk on forms
+// Required asterisk on forms.
 .required,
 ._required {
 
@@ -105,7 +114,29 @@ label {
   }
 }
 
-// Mage error warning
-.mage-error {
+// Form hints.
+.hint,
+.note {
+  font-size: $global-font-size * 0.8;
+  margin-bottom: $global-margin;
+}
+
+// Errors and warnings.
+.mage-error,
+.error {
   color: scale-color(map-get($foundation-palette, alert), $alpha: -40%);
+}
+
+input.error,
+select.error {
+  border: 3px solid scale-color(map-get($foundation-palette, alert), $alpha: 0%);
+  margin-bottom: 0;
+}
+
+.field-error {
+  background: scale-color(map-get($foundation-palette, alert), $alpha: 0%);
+  color: $white;
+  display: block;
+  font-size: rem-calc(12);
+  padding: $global-padding / 4;
 }
