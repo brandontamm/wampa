@@ -124,7 +124,8 @@ label {
 // Errors and warnings.
 .mage-error,
 .error {
-  color: scale-color(map-get($foundation-palette, alert), $alpha: -40%);
+  background-color: scale-color(map-get($foundation-palette, alert), $alpha: -40%);
+  color: $white;
 }
 
 input.error,
