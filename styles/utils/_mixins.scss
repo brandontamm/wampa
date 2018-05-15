@@ -394,3 +394,66 @@ $icons: (
   width: 1px;
   word-wrap: normal;
 }
+
+// Component margin
+// ----------
+@mixin component-margin($margin: $global-margin) {
+  @include component-margin-top($margin);
+  @include component-margin-bottom($margin);
+}
+
+@mixin component-margin-top($margin: $global-margin) {
+  margin-top: $margin * 2;
+
+  @include breakpoint(medium) {
+    margin-top: $margin * 3;
+  }
+
+  @include breakpoint(large) {
+    margin-top: $margin * 5;
+  }
+}
+
+@mixin component-margin-bottom($margin: $global-margin) {
+  margin-bottom: $margin * 2;
+
+  @include breakpoint(medium) {
+    margin-bottom: $margin * 3;
+  }
+
+  @include breakpoint(large) {
+    margin-bottom: $margin * 5;
+  }
+}
+
+// Component padding
+// ----------
+@mixin component-padding($padding: $global-padding) {
+  @include component-padding-top($padding);
+  @include component-padding-bottom($padding);
+}
+
+@mixin component-padding-top($padding: $global-padding) {
+  padding-top: $padding * 2;
+
+  @include breakpoint(medium) {
+    padding-top: $padding * 3;
+  }
+
+  @include breakpoint(large) {
+    padding-top: $padding * 5;
+  }
+}
+
+@mixin component-padding-bottom($padding: $global-padding) {
+  padding-bottom: $padding * 2;
+
+  @include breakpoint(medium) {
+    padding-bottom: $padding * 3;
+  }
+
+  @include breakpoint(large) {
+    padding-bottom: $padding * 5;
+  }
+}
+
