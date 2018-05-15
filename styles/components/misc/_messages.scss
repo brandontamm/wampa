@@ -2,11 +2,6 @@
   @include grid-column;
 }
 
-.page.messages {
-  color: $white;
-  padding: 0 ($global-padding * 2);
-}
-
 // Account messages
 .account {
 
