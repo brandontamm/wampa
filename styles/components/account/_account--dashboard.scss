@@ -2,25 +2,26 @@
 .customer-account-index {
 
   [class*="dashboard"] {
+    background-color: $white;
+    clear: both;
 
     .block-title {
-
       background-color: $grey-light;
-      margin: $global-margin 0;
-      margin-left: $global-margin * -1;
+      margin-top: 0;
+      margin-left: 0;
       padding: $global-padding 0;
       padding-left: $global-padding;
     }
   }
 
   .block-content {
+    padding: $global-padding;
+    margin-bottom: $global-margin * 2;
 
     .box {
-
       margin-bottom: $global-margin;
 
       p {
-
         margin-bottom: 0;
       }
     }
@@ -31,6 +32,44 @@
         border-left: 1px solid $grey;
         margin-left: $global-margin;
         padding-left: $global-padding;
+      }
+    }
+  }
+}
+
+.account:not(.wishlist-index-index) {
+
+  .actions-toolbar {
+
+    .primary,
+    .secondary {
+      float: right;
+
+      @include breakpoint(medium down) {
+        margin-bottom: $global-margin / 2;
+        margin-left: $global-margin / 2;
+      }
+    }
+
+    .secondary {
+
+      @include breakpoint(medium) {
+        margin-right: $global-margin * 2;
+      }
+    }
+  }
+}
+
+.customer-account-create {
+
+  .actions-toolbar {
+
+    .secondary {
+      margin-top: $global-margin;
+
+      @include breakpoint(medium) {
+        margin-top: 0;
+        margin-right: 0 !important;
       }
     }
   }
