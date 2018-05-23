@@ -1,28 +1,33 @@
-//Customer Account Orders View Page
+// Customer Account Orders View Page
 .sales-order-view {
+
+  .order-status {
+    font-weight: bold;
+    font-size: $global-font-size * 1.5;
+    color: $primary-color;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+
+    > .actions-toolbar {
+      order: 4;
+      margin-top: $global-margin;
+    }
+  }
 
   .order-items {
 
     ul {
-
       list-style: none;
       margin-left: 0;
     }
   }
 
-  // Remove second instance of "Order Items" - on top of order table as a link set
-  // Remove third instance of "Order Items" - inside order table as a caption
-  .table-order-items caption,
-  .order-links {
-
-    font-size: 0;
-    visibility: hidden;
-  }
-
   .order-date {
 
     .label {
-
       color: $grey;
       background-color: transparent;
       padding-left: 0;
@@ -32,18 +37,25 @@
   .order-actions-toolbar {
 
     .actions {
-
       margin: $global-margin 0;
 
       a {
-
         @extend %button;
         @include button-style;
       }
     }
   }
+
+  // Remove second instance of "Order Items" - on top of order table as a link set
+  // Remove third instance of "Order Items" - inside order table as a caption
+  .table-order-items caption,
+  .order-links {
+    font-size: 0;
+    visibility: hidden;
+  }
 }
 
+// Details view.
 .block-order-details-view {
 
   .block-content {
@@ -62,5 +74,26 @@
 
   &:after {
     clear: both;
+  }
+}
+
+// Order history table
+.orders-history {
+
+  table {
+
+    &.history.table-order-items {
+
+      tbody {
+
+        > tr {
+          border-bottom: 1px solid $grey-light;
+
+          &:nth-child(even) {
+            background-color: $grey-light;
+          }
+        }
+      }
+    }
   }
 }
