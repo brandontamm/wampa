@@ -14,6 +14,18 @@
     }
   }
 
+  .block-dashboard-addresses {
+
+    .block-title {
+      position: relative;
+
+      > .action.edit {
+        position: absolute;
+        right: $global-margin;
+      }
+    }
+  }
+
   .block-content {
     padding: $global-padding;
     margin-bottom: $global-margin * 2;
