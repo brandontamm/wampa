@@ -1,0 +1,86 @@
+.sidebar {
+
+  ul,
+  ol {
+    margin: 0;
+    list-style: none;
+    position: relative;
+
+    li {
+
+      a {
+        padding: ($global-padding / 3) 0;
+        display: block;
+      }
+
+      .count {
+        font-size: $global-font-size * 0.8;
+        font-weight: bold;
+        color: $grey;
+        margin-left: $global-margin / 4;
+        display: none;
+      }
+    }
+  }
+
+  dl {
+    margin-bottom: 0;
+  }
+
+  p,
+  dt {
+    font-weight: bold;
+    margin-top: $global-margin * 1.25;
+    margin-bottom: 0;
+    font-size: $global-font-size * 1.2;
+  }
+
+  .block {
+    margin-top: $global-margin;
+  }
+
+  .title,
+  .block-title {
+    border-bottom: 1px solid $grey-light;
+    font-size: $global-font-size * 1.2;
+  }
+
+  .block-content:not(.filter-content) {
+    padding: $global-padding;
+    background-color: $grey-light;
+  }
+
+  // Sidebar logout link - on customer account pages.
+  .logout {
+
+    li {
+      display: block;
+
+      a {
+        @include icon(before, lock, fontawesome) {
+          color: $primary-color;
+          font-size: $global-font-size * 1.5;
+          margin-right: $global-margin;
+        };
+
+        display: block;
+        list-style: none;
+        padding: $global-padding 0 $global-padding ($global-padding / 4);
+        border-top: 1px solid $grey-light;
+        margin-top: $global-margin;
+
+        &:hover {
+          background-color: rgba($blue-light, 0.5);
+        }
+      }
+    }
+  }
+
+  // Account navigation sidebar
+  .account-nav {
+
+    .title {
+      font-size: $global-font-size * 1.3;
+    }
+  }
+}
