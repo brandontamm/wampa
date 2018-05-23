@@ -87,7 +87,6 @@
           font-size: $global-font-size * 1.5;
           margin-right: $global-margin;
         };
-
         display: block;
         list-style: none;
         padding: $global-padding 0 $global-padding ($global-padding / 4);
@@ -95,7 +94,7 @@
         margin-top: $global-margin;
 
         &:hover {
-          background-color: rgba($blue-light, 0.5);
+          background-color: $grey-light;
         }
       }
     }

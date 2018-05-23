@@ -16,7 +16,6 @@ footer {
   }
 
   .block.newsletter {
-
     @include grid-column(12);
     margin-bottom: $global-margin * 2;
 
@@ -45,7 +44,6 @@ footer {
         background-color: darken($grey-light, 5%);
 
         &:hover {
-
           background-color: darken($grey-light, 15%);
         }
       }

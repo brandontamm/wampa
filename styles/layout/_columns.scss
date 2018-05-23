@@ -5,16 +5,13 @@
 .page-layout-2columns-right {
 
   .page-main {
-
     @include grid-column(12);
 
     .page-title-wrapper {
-
       @include grid-column(12);
     }
 
     .main {
-
       @include grid-column(12);
 
       @include breakpoint(medium) {
@@ -23,7 +20,6 @@
     }
 
     .sidebar {
-
       @include grid-column(12);
 
       @include breakpoint(medium) {
@@ -54,18 +50,15 @@
 .page-layout-1column {
 
   .page-main {
-
     @include grid-column(12);
 
     .page-title-wrapper {
-
       @include grid-column(12);
     }
 
     .column {
 
       .main {
-
         @include grid-column(12);
       }
     }

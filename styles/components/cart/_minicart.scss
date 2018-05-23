@@ -1,4 +1,4 @@
-//Minicart in header
+// Minicart in header
 .minicart-wrapper {
   float: right;
   position: relative;
@@ -15,7 +15,7 @@
       padding-left: 0;
     }
 
-    //Minicart dropdown displayed as dropdown over page content not pushing page content down
+    // Minicart dropdown displayed as dropdown over page content not pushing page content down
     .block-minicart {
       display: block;
       background-color: $white;
@@ -42,7 +42,7 @@
     @include visually-hidden;
   }
 
-  //Open cart/shopping cart button
+  // Open cart/shopping cart button
   .showcart {
 
     outline: none;
@@ -54,7 +54,7 @@
       vertical-align: top;
     };
 
-    //removes default My Cart text
+    // removes default My Cart text
     > span {
       display: none;
     }
@@ -88,7 +88,7 @@
     }
   }
 
-  //Close button
+  // Close button
   .action.close {
 
     width: 0;
@@ -240,7 +240,6 @@
     [aria-selected="true"] {
   
       &:hover {
-  
         color: $grey;
       }
     }

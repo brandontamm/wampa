@@ -1,6 +1,5 @@
-//Table styles - used in Magento 2
+// Table styles - used in Magento 2
 table {
-
   border: 1px solid $grey-light;
   text-align: left;
   display: table;
@@ -8,18 +7,16 @@ table {
   border-spacing: 2px;
 
   caption {
-
     text-align: left;
     padding-left: 0;
   }
 
   td {
-
     vertical-align: top;
   }
 }
 
-//Account Order table for small screens.
+// Account Order table for small screens.
 .table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) {
 
   > tbody {
