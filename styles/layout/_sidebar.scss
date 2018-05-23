@@ -23,6 +23,31 @@
     }
   }
 
+  ul {
+
+    li {
+      display: block;
+
+      strong {
+        color: $primary-color;
+      }
+
+      a,
+      strong {
+        display: block;
+        padding: $global-padding / 4;
+
+        &:hover {
+          background-color: rgba($blue-light, 0.5);
+        }
+
+        strong {
+          padding: 0;
+        }
+      }
+    }
+  }
+
   dl {
     margin-bottom: 0;
   }
