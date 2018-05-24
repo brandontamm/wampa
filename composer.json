@@ -1,6 +1,6 @@
 {
-    "name": "augustash/theme-frontend-wampa",
-    "description": "Magento base theme for August Ash projects based on Snowdog-blank-sass",
+    "name": "brandontamm/wampa",
+    "description": "Magento base theme based on Snowdog-blank-sass",
     "version": "0.2.5",
     "license": "MIT",
     "type": "magento2-theme",
